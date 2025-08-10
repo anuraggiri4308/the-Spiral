@@ -18,14 +18,6 @@ export const Frame = (): JSX.Element => {
         <OverlapWrapperSubsection />
         <OverlapGroupWrapperSubsection />
 
-        <div className="w-full flex justify-center overflow-hidden">
-          <img
-            className="relative w-[1622px] h-[190px]"
-            alt="Line"
-            src="/line-620.svg"
-          />
-        </div>
-
         <DivWrapperSubsection />
         <FrameWrapperSubsection />
         <DivSubsection />

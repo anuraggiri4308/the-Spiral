@@ -32,12 +32,32 @@ export const ElementWrapperSubsection = (): JSX.Element => {
 
   return (
     <section className="relative w-full py-28 bg-[#00020f]">
+      <style>{`
+        @keyframes spiralGradientShift {
+          0% { background-position: 0% 50%; }
+          50% { background-position: 100% 50%; }
+          100% { background-position: 0% 50%; }
+        }
+        .spiral-card-overlay {
+          opacity: 0;
+          transform: scale(0.98);
+          transition: opacity 300ms ease, transform 300ms ease;
+          background-size: 200% 200%;
+        }
+        .spiral-card-group:hover .spiral-card-overlay {
+          opacity: 1;
+          transform: scale(1);
+          animation: spiralGradientShift 4s linear infinite;
+        }
+      `}</style>
+
+      {/* Header Section */}
       <div className="flex flex-col items-center justify-center gap-6 mb-16">
         <Badge className="px-4 py-2.5 rounded-full font-medium text-white text-base bg-transparent shadow-[0px_2px_12px_#07051880] backdrop-blur-[11.3px] before:content-[''] before:absolute before:inset-0 before:p-[0.94px] before:rounded-[100px] before:[background:linear-gradient(1deg,rgba(255,255,255,0.1)_0%,rgba(255,255,255,0)_38%)] before:[-webkit-mask:linear-gradient(#fff_0_0)_content-box,linear-gradient(#fff_0_0)] before:[-webkit-mask-composite:xor] before:[mask-composite:exclude] before:z-[1] before:pointer-events-none [background:radial-gradient(50%_50%_at_50%_0%,rgba(255,255,255,0.1)_0%,rgba(255,255,255,0)_100%),linear-gradient(180deg,rgba(255,255,255,0.1)_0%,rgba(255,255,255,0.08)_100%)]">
           Built for Accuracy, Designed to Adapt
         </Badge>
-        {/* ✅ This is the heading you wanted added */}
-        <h1 className="font-bold text-white text-[32px] md:text-[64px] leading-[40px] md:leading-[80px] tracking-[-1.28px] font-['Rethink_Sans',Helvetica] max-w-[800px]">
+
+        <h1 className="font-bold text-white text-[32px] md:text-[64px] leading-[40px] md:leading-[80px] tracking-[-1.28px] font-['Rethink_Sans',Helvetica] max-w-[800px] text-center">
           <span className="mr-1">Why Choose</span>
           <span className="bg-gradient-to-r from-[#35E0ED] to-[#0074E5] bg-clip-text text-transparent">
             The Spiral?
@@ -46,39 +66,52 @@ export const ElementWrapperSubsection = (): JSX.Element => {
 
         <div className="max-w-[828px] text-center">
           <p className="font-medium text-xl tracking-[-0.40px] leading-7">
-            <span className="text-[#adb2b9] tracking-[-0.08px]">
+            <span className="text-[#adb2b9]">
               Guided by nature&apos;s code, we craft{" "}
             </span>
-            <span className="text-white tracking-[-0.08px]">
-              AI that never stops learning
-            </span>
-            <span className="text-[#adb2b9] tracking-[-0.08px]">
-              , adapting, and delivering value -no matter how complex your data
+            <span className="text-white">AI that never stops learning</span>
+            <span className="text-[#adb2b9]">
+              , adapting, and delivering value - no matter how complex your data
               gets.
             </span>
           </p>
         </div>
       </div>
 
-      <div className="flex flex-wrap justify-center gap-6 px-4 md:px-8 lg:px-32">
+      {/* Cards */}
+      <div className="flex flex-wrap justify-center items-stretch gap-6 px-4 md:px-8 lg:px-32">
         {featureCards.map((card, index) => (
           <Card
             key={index}
-            className="w-[278px] bg-transparent border-none overflow-hidden"
+            className="spiral-card-group relative w-[278px] rounded-2xl p-[1px] bg-transparent border-none overflow-visible flex flex-col"
           >
-            <img
-              className="w-full h-[185px] object-cover"
-              alt={`${card.title} illustration`}
-              src={card.image}
+            {/* Gradient Border Layer */}
+            <div
+              className="spiral-card-overlay absolute inset-0 rounded-2xl pointer-events-none"
+              style={{
+                background: "linear-gradient(90deg, #35E0ED, #0774E5, #4F39F6)",
+                zIndex: 0,
+              }}
             />
-            <CardContent className="flex flex-col items-center justify-center gap-2 px-3 py-6 rounded-b-[16px] overflow-hidden">
-              <h3 className="font-bold text-absolutewhite text-xl text-center leading-[30px] w-full font-['Rethink_Sans',Helvetica]">
-                {card.title}
-              </h3>
-              <p className="text-[#adb2b9] text-base text-center leading-6 font-['Rethink_Sans',Helvetica]">
-                {card.description}
-              </p>
-            </CardContent>
+
+            {/* Inner Content */}
+            <div className="relative z-10 rounded-[15px] bg-[#00020f] overflow-hidden flex flex-col h-full">
+              <img
+                className="w-full h-[185px] object-cover"
+                alt={`${card.title} illustration`}
+                src={card.image}
+              />
+              <CardContent className="flex flex-col items-center justify-between flex-1 px-3 py-6 rounded-b-[15px]">
+                <div>
+                  <h3 className="font-bold text-absolutewhite text-xl text-center leading-[30px] font-['Rethink_Sans',Helvetica]">
+                    {card.title}
+                  </h3>
+                  <p className="text-[#adb2b9] text-base text-center leading-6 font-['Rethink_Sans',Helvetica] min-h-[48px]">
+                    {card.description}
+                  </p>
+                </div>
+              </CardContent>
+            </div>
           </Card>
         ))}
       </div>

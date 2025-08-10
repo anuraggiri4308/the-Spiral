@@ -29,15 +29,23 @@ export const OverlapWrapperSubsection = (): JSX.Element => {
     <section className="relative w-full h-[725px] bg-[#0b0c13]">
       <div className="relative w-full h-[712px] bg-[url(/global-network-connection-covering-earth-with-lines-innovative-p.png)] bg-[100%_100%]">
         <div className="flex flex-col w-[524px] items-start gap-6 absolute top-[267px] left-[72px]">
-          <Badge className="inline-flex items-center gap-1.5 px-4 py-2.5 relative flex-[0_0_auto] rounded-[100px] border-[none] shadow-[0px_2px_12px_#07051880] backdrop-blur-[11.3px] backdrop-brightness-[100%] [-webkit-backdrop-filter:blur(11.3px)_brightness(100%)] [background:radial-gradient(50%_50%_at_50%_0%,rgba(255,255,255,0.1)_0%,rgba(255,255,255,0)_100%),linear-gradient(180deg,rgba(255,255,255,0.1)_0%,rgba(255,255,255,0.08)_100%)] before:content-[''] before:absolute before:inset-0 before:p-[0.94px] before:rounded-[100px] before:[background:linear-gradient(1deg,rgba(255,255,255,0.1)_0%,rgba(255,255,255,0)_38%)] before:[-webkit-mask:linear-gradient(#fff_0_0)_content-box,linear-gradient(#fff_0_0)] before:[-webkit-mask-composite:xor] before:[mask-composite:exclude] before:z-[1] before:pointer-events-none">
-            <span className="relative w-fit mt-[-0.94px] [font-family:'Rethink_Sans',Helvetica] font-medium text-white text-base tracking-[0] leading-6 whitespace-nowrap">
-              From Raw Data to Real Results
-            </span>
+          <Badge className="px-4 py-2.5 rounded-full font-medium text-white text-base bg-transparent shadow-[0px_2px_12px_#07051880] backdrop-blur-[11.3px] before:content-[''] before:absolute before:inset-0 before:p-[0.94px] before:rounded-[100px] before:[background:linear-gradient(1deg,rgba(255,255,255,0.1)_0%,rgba(255,255,255,0)_38%)] before:[-webkit-mask:linear-gradient(#fff_0_0)_content-box,linear-gradient(#fff_0_0)] before:[-webkit-mask-composite:xor] before:[mask-composite:exclude] before:z-[1] before:pointer-events-none [background:radial-gradient(50%_50%_at_50%_0%,rgba(255,255,255,0.1)_0%,rgba(255,255,255,0)_100%),linear-gradient(180deg,rgba(255,255,255,0.1)_0%,rgba(255,255,255,0.08)_100%)]">
+            From Raw Data to Real Results
           </Badge>
 
-          <p className="relative self-stretch [font-family:'Rethink_Sans',Helvetica] font-medium text-[#adb2b9] text-xl tracking-[-0.40px] leading-7">
-            Our organic approach to AI development follows nature&#39;s most
-            successful blueprint
+          <h1 className="font-bold text-white text-[32px] md:text-[64px] leading-[40px] md:leading-[80px] tracking-[-1.28px] font-['Rethink_Sans',Helvetica] max-w-[800px] text-center">
+            <span className="mr-1">How it</span>
+            <span className="bg-gradient-to-r from-[#35E0ED] to-[#0074E5] bg-clip-text text-transparent">
+              Works?
+            </span>
+          </h1>
+
+          <p className="font-medium text-xl tracking-[-0.40px] leading-7">
+            <span className="text-[#adb2b9]">Our organic approach to </span>
+            <span className="text-white">AI development </span>
+            <span className="text-[#adb2b9]">
+              follows nature&#39;s most successful blueprint
+            </span>
           </p>
         </div>
 

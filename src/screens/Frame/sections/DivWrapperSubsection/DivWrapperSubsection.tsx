@@ -10,7 +10,6 @@ export const DivWrapperSubsection = (): JSX.Element => {
       position: "Founder & CEO",
       image:
         "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=300",
-      active: false,
       linkedin: "https://www.linkedin.com/in/rajnish-tiwari",
     },
     {
@@ -19,7 +18,6 @@ export const DivWrapperSubsection = (): JSX.Element => {
       position: "Co-Founder & COO",
       image:
         "https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=300",
-      active: false,
       linkedin: "https://www.linkedin.com/in/anurag-giri-ab2a00148/",
     },
     {
@@ -28,7 +26,6 @@ export const DivWrapperSubsection = (): JSX.Element => {
       position: "Co-Founder & CTO",
       image:
         "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=300",
-      active: false,
       linkedin: "https://www.linkedin.com/in/devbrat-pandey-77879314a/",
     },
     {
@@ -37,7 +34,6 @@ export const DivWrapperSubsection = (): JSX.Element => {
       position: "Director of Product",
       image:
         "https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=200",
-      active: false,
       linkedin: "https://www.linkedin.com/in/kriti-bohra-45a924161/",
     },
   ];
@@ -49,30 +45,22 @@ export const DivWrapperSubsection = (): JSX.Element => {
           Visionaries Leading AI’s Next Evolution
         </Badge>
 
-        <h3 className="font-bold text-white text-[clamp(28px,6vw,64px)] leading-[1.2] tracking-[-1.28px] font-['Rethink_Sans',Helvetica] max-w-full whitespace-nowrap overflow-hidden text-center">
+        <h3 className="font-bold text-white text-[clamp(28px,6vw,64px)] leading-[1.2] tracking-[-1.28px] text-center font-['Rethink_Sans',Helvetica]">
           <span className="mr-1">The Minds Behind </span>
           <span className="bg-gradient-to-r from-[#35E0ED] to-[#0074E5] bg-clip-text text-transparent">
             The Spiral
           </span>
         </h3>
 
-        <p className="text-center [font-family:'Rethink_Sans',Helvetica] font-medium text-lg md:text-xl tracking-[-0.40px] leading-7">
-          <span className="text-[#adb2b9] tracking-[-0.08px]">
-            Discover the creative minds shaping{" "}
-          </span>
-          <span className="text-white tracking-[-0.08px]">
-            the Spiral&#39;s
-          </span>
-          <span className="text-[#adb2b9] tracking-[-0.08px]">
-            {" "}
-            innovative solutions and guiding its strategic vision to new
-            heights.
-          </span>
+        <p className="text-center [font-family:'Rethink_Sans',Helvetica] font-medium text-lg md:text-xl tracking-[-0.40px] leading-7 text-[#adb2b9] max-w-2xl">
+          Discover the creative minds shaping{" "}
+          <span className="text-white">the Spiral’s</span> innovative solutions
+          and guiding its strategic vision to new heights.
         </p>
       </div>
 
       <div className="relative mx-auto mt-16 max-w-[1030px] px-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-14 relative">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-14">
           {teamMembers.map((member, index) => (
             <div
               key={member.id}
@@ -90,32 +78,25 @@ export const DivWrapperSubsection = (): JSX.Element => {
               </div>
 
               {/* Card body */}
-              <Card className="rounded-none border-0 overflow-hidden">
+              <Card className="rounded-none border-0 overflow-hidden text-center">
                 <CardContent className="p-0">
-                  <div className="h-[72px] bg-[linear-gradient(0deg,rgba(0,0,0,1)_0%,rgba(52,55,71,1)_100%)] p-4">
-                    <div className="flex flex-col gap-0.5">
-                      <div className="[font-family:'Rethink_Sans',Helvetica] font-medium text-white text-sm leading-[26px]">
-                        {member.name}
-                      </div>
-                      <div className="[font-family:'Rethink_Sans',Helvetica] font-medium text-[#adb2b9] text-xs leading-3">
-                        {member.position}
-                      </div>
+                  <div className="h-[72px] flex flex-col justify-center items-center bg-[linear-gradient(0deg,rgba(0,0,0,1)_0%,rgba(52,55,71,1)_100%)] p-4">
+                    <div className="[font-family:'Rethink_Sans',Helvetica] font-medium text-white text-sm leading-[26px]">
+                      {member.name}
+                    </div>
+                    <div className="[font-family:'Rethink_Sans',Helvetica] font-medium text-[#adb2b9] text-xs leading-3">
+                      {member.position}
                     </div>
                   </div>
                 </CardContent>
 
-                {/* Footer with hover & LinkedIn link */}
-                <CardFooter className="p-0 h-[31px] overflow-hidden rounded-b-xl">
+                {/* Footer - Hidden until hover */}
+                <CardFooter className="p-0 h-[31px] overflow-hidden rounded-b-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <a
                     href={member.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`w-full h-full flex items-center justify-center transition-all duration-300 ${
-                      member.active
-                        ? "bg-[linear-gradient(90deg,rgba(79,57,246,1)_0%,rgba(0,146,184,1)_100%)]"
-                        : "bg-transparent group-hover:bg-[linear-gradient(90deg,rgba(79,57,246,0.8)_0%,rgba(0,146,184,0.8)_100%)] border-t border-[#373737]"
-                    }`}
-                    style={{ cursor: "pointer" }}
+                    className="w-full h-full flex items-center justify-center bg-[linear-gradient(90deg,rgba(79,57,246,0.8)_0%,rgba(0,146,184,0.8)_100%)] cursor-pointer"
                   >
                     <div className="[font-family:'Rethink_Sans',Helvetica] font-semibold text-white text-[10px] tracking-[-0.10px] leading-6 group-hover:scale-110 transition-transform duration-300">
                       VIEW PROFILE
