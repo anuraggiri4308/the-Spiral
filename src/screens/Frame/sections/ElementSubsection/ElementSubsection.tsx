@@ -8,6 +8,7 @@ import {
   NavigationMenuList,
 } from "../../../../components/ui/navigation-menu";
 import { Badge } from "../../../../components/ui/badge";
+import heroImage from "../../../../images/hero-section-bg-img.png";
 
 export const ElementSubsection = (): JSX.Element => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
@@ -137,7 +138,7 @@ export const ElementSubsection = (): JSX.Element => {
         <img
           className="absolute w-full md:w-[1147px] h-[400px] md:h-[640px] top-[95px] left-0 md:left-[293px] object-cover"
           alt="Background Image"
-          src="/images/hero-section-bg-img.png"
+          src={heroImage}
         />
 
         {/* Hero Content */}
