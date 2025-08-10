@@ -92,12 +92,18 @@ export const FrameWrapperSubsection = (): JSX.Element => {
 
                     {/* Read More Button */}
                     <div className="flex items-center gap-2 mt-1 cursor-pointer group transition-all duration-300">
-                      <span
-                        className="[font-family:'Rethink_Sans',Helvetica] font-medium text-lg tracking-[-0.54px] leading-6 whitespace-nowrap text-white 
-    group-hover:bg-gradient-to-r group-hover:from-[#35E0ED] group-hover:to-[#0074E5] 
-    group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300"
-                      >
-                        Read More
+                      <span className="relative font-medium text-lg tracking-[-0.54px] leading-6 whitespace-nowrap cursor-pointer">
+                        <span
+                          className="
+      absolute inset-0 bg-gradient-to-r from-[#35E0ED] to-[#0074E5] bg-clip-text text-transparent opacity-0
+      transition-opacity duration-300 ease-in-out group-hover:opacity-100 tracking-wide
+    "
+                        >
+                          Read More
+                        </span>
+                        <span className="relative tracking-wide text-white transition-colors duration-300 ease-in-out group-hover:text-transparent">
+                          Read More
+                        </span>
                       </span>
 
                       <svg
