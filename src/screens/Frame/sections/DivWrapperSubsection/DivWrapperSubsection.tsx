@@ -81,10 +81,10 @@ export const DivWrapperSubsection = (): JSX.Element => {
               <Card className="rounded-none border-0 overflow-hidden text-center">
                 <CardContent className="p-0">
                   <div className="h-[72px] flex flex-col justify-center items-center bg-[linear-gradient(0deg,rgba(0,0,0,1)_0%,rgba(52,55,71,1)_100%)] p-4">
-                    <div className="[font-family:'Rethink_Sans',Helvetica] font-medium text-white text-sm leading-[26px]">
+                    <div className="[font-family:'Rethink_Sans',Helvetica] font-small text-white text-lg mb-1.5 leading-[26px]">
                       {member.name}
                     </div>
-                    <div className="[font-family:'Rethink_Sans',Helvetica] font-medium text-[#adb2b9] text-xs leading-3">
+                    <div className="[font-family:'Rethink_Sans',Helvetica] font-medium text-[#adb2b9] text-sm leading-3 opacity-70">
                       {member.position}
                     </div>
                   </div>
