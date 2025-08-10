@@ -1,6 +1,10 @@
 import React from "react";
 import { Badge } from "../../../../components/ui/badge";
 import { Card, CardContent, CardFooter } from "../../../../components/ui/card";
+import rajnishImage from "/images/rajnish.jpeg";
+import anuragImage from "/images/anurag.jpeg";
+import devbratImage from "/images/devbrat.jpeg";
+import kritiImage from "/images/kriti.jpeg";
 
 export const DivWrapperSubsection = (): JSX.Element => {
   const teamMembers = [
@@ -8,38 +12,34 @@ export const DivWrapperSubsection = (): JSX.Element => {
       id: 1,
       name: "Rajnish Tiwari",
       position: "Founder & CEO",
-      image:
-        "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=300",
+      image: rajnishImage,
       linkedin: "https://www.linkedin.com/in/rajnish-tiwari",
     },
     {
       id: 2,
       name: "Anurag Giri",
       position: "Co-Founder & COO",
-      image:
-        "https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=300",
+      image: anuragImage,
       linkedin: "https://www.linkedin.com/in/anurag-giri-ab2a00148/",
     },
     {
       id: 3,
       name: "Devbrat Pandey",
       position: "Co-Founder & CTO",
-      image:
-        "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=300",
+      image: devbratImage,
       linkedin: "https://www.linkedin.com/in/devbrat-pandey-77879314a/",
     },
     {
       id: 4,
       name: "Kriti Bohra",
       position: "Director of Product",
-      image:
-        "https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=200",
+      image: kritiImage,
       linkedin: "https://www.linkedin.com/in/kriti-bohra-45a924161/",
     },
   ];
 
   return (
-    <section className="relative w-full py-16 md:py-28 bg-[#00020f]">
+    <section className="relative w-full py-16 md:py-16 bg-[#00020f]">
       <div className="flex flex-col items-center gap-6 mx-auto max-w-[828px] px-4">
         <Badge className="px-4 py-2.5 rounded-full font-medium text-white text-base bg-transparent shadow-[0px_2px_12px_#07051880] backdrop-blur-[11.3px] before:content-[''] before:absolute before:inset-0 before:p-[0.94px] before:rounded-[100px] before:[background:linear-gradient(1deg,rgba(255,255,255,0.1)_0%,rgba(255,255,255,0)_38%)] before:[-webkit-mask:linear-gradient(#fff_0_0)_content-box,linear-gradient(#fff_0_0)] before:[-webkit-mask-composite:xor] before:[mask-composite:exclude] before:z-[1] before:pointer-events-none [background:radial-gradient(50%_50%_at_50%_0%,rgba(255,255,255,0.1)_0%,rgba(255,255,255,0)_100%),linear-gradient(180deg,rgba(255,255,255,0.1)_0%,rgba(255,255,255,0.08)_100%)]">
           Visionaries Leading AI’s Next Evolution
