@@ -8,7 +8,7 @@ import {
   NavigationMenuList,
 } from "../../../../components/ui/navigation-menu";
 import { Badge } from "../../../../components/ui/badge";
-import heroImage from "../../../../images/hero-section-bg-img.png";
+import heroImage from "/images/hero-section-bg-img.png";
 
 export const ElementSubsection = (): JSX.Element => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);

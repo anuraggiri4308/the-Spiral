@@ -3,6 +3,7 @@ import React from "react";
 import { Badge } from "../../../../components/ui/badge";
 import { Button } from "../../../../components/ui/button";
 import { Card, CardContent } from "../../../../components/ui/card";
+import expertise1 from "/images/expertise-1.svg";
 
 export const OverlapGroupWrapperSubsection = (): JSX.Element => {
   // Data for service cards
@@ -13,7 +14,7 @@ export const OverlapGroupWrapperSubsection = (): JSX.Element => {
       description:
         "Precision annotation services with AI-assisted workflows and expert human oversight for maximum accuracy.",
       borderColor: "border-[#e78727]",
-      image: "/images/expertise-1.svg",
+      image: expertise1,
       imageFirst: false,
     },
     {
@@ -22,7 +23,7 @@ export const OverlapGroupWrapperSubsection = (): JSX.Element => {
       description:
         "Comprehensive data gathering from multiple sources with quality assurance and ethical compliance standards.",
       borderColor: "border-violet-500",
-      image: "/images/expertise-1.svg",
+      image: expertise1,
       imageFirst: true,
     },
     {
@@ -31,7 +32,7 @@ export const OverlapGroupWrapperSubsection = (): JSX.Element => {
       description:
         "Scalable ML ops platform with automated training pipelines and continuous model optimization.",
       borderColor: "border-[#00a656]",
-      image: "/images/expertise-1.svg",
+      image: expertise1,
       imageFirst: false,
     },
     {
@@ -40,7 +41,7 @@ export const OverlapGroupWrapperSubsection = (): JSX.Element => {
       description:
         "Expert human validation integrated seamlessly into AI workflows for enhanced accuracy and reliability.",
       borderColor: "border-[#ee5fa3]",
-      image: "/images/expertise-1.svg",
+      image: expertise1,
       imageFirst: true,
     },
   ];

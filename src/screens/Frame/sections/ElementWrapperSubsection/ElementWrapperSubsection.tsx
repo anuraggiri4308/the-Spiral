@@ -2,28 +2,34 @@ import React from "react";
 import { Badge } from "../../../../components/ui/badge";
 import { Card, CardContent } from "../../../../components/ui/card";
 
+// Import SVG images
+import personalisedModels from "/images/Personalised-models.svg";
+import accurateAnnotation from "/images/Accurate-annotation.svg";
+import secure from "/images/secure.svg";
+import continuous from "/images/continous.svg";
+
 export const ElementWrapperSubsection = (): JSX.Element => {
   const featureCards = [
     {
-      image: "/images/Personalised-models.svg",
+      image: personalisedModels,
       title: "Personalised Models",
       description:
         "Each model is fine-tuned to your domain and data - delivering better, more accurate results that evolve with you.",
     },
     {
-      image: "/images/Accurate-annotation.svg",
+      image: accurateAnnotation,
       title: "Accurate Annotation",
       description:
         "Precision-driven data labelling with human-in-the-loop validation ensures your models train on the highest quality datasets.",
     },
     {
-      image: "/images/secure.svg",
+      image: secure,
       title: "Secure & Resilient",
       description:
         "Enterprise-grade security with redundant systems and privacy-first architecture protect your most valuable data assets.",
     },
     {
-      image: "/images/continous.svg",
+      image: continuous,
       title: "Continuous Evolution",
       description:
         "Like DNA replication, our systems continuously improve, adapting to new patterns and optimizing performance over time.",

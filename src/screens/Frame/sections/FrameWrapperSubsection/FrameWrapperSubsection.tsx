@@ -1,38 +1,36 @@
 import React from "react";
 import { Card, CardContent } from "../../../../components/ui/card";
 import { Badge } from "../../../../components/ui/badge";
+import blog1 from "/images/blog-1.svg";
 
 export const FrameWrapperSubsection = (): JSX.Element => {
   const articles = [
     {
       id: 1,
-      image: "/images/blog-1.svg",
+      image: blog1,
       category: "TECHNOLOGY",
       timeAgo: "1 day Ago",
       title: "Machine Learning",
       description:
         "Scalable ML ops platform with ops platform with automated training pipelines and continuous mod",
-      arrowIcon: "/vector-3.svg",
     },
     {
       id: 2,
-      image: "/images/blog-1.svg",
+      image: blog1,
       category: "TECHNOLOGY",
       timeAgo: "1 day Ago",
       title: "Machine Learning",
       description:
         "Scalable ML ops platform with ops platform with automated training pipelines and continuous mod",
-      arrowIcon: "/vector-5.svg",
     },
     {
       id: 3,
-      image: "/images/blog-1.svg",
+      image: blog1,
       category: "TECHNOLOGY",
       timeAgo: "1 day Ago",
       title: "Machine Learning",
       description:
         "Scalable ML ops platform with ops platform with automated training pipelines and continuous mod",
-      arrowIcon: "/vector-3.svg",
     },
   ];
 
