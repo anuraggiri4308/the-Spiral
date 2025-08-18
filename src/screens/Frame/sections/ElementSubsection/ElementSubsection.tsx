@@ -37,7 +37,7 @@ export const ElementSubsection = (): JSX.Element => {
                 src="/svg-1.svg"
               /> */}
               <div className="text-white text-[22px] leading-[24px] tracking-[0.02em] font-semibold font-['Raleway',Helvetica]">
-                The Spiral AI
+                The Spiral
               </div>
             </div>
 
@@ -84,11 +84,11 @@ export const ElementSubsection = (): JSX.Element => {
             {/* CTA Button */}
             <div className="hidden lg:flex items-start justify-end">
               <Button
-                variant="gradient"
+                variant="secondary"
                 onClick={() =>
                   window.open("https://www.linkedin.com", "_blank")
                 }
-                className="group px-5 py-6"
+                className="group w-[170px] flex items-center justify-center gap-2 px-4 py-5 rounded-full border border-white font-medium text-base tracking-[-0.54px] leading-6 hover:bg-white hover:opacity-90 transition-all duration-300"
               >
                 Book a Demo
                 <svg

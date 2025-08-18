@@ -41,7 +41,7 @@ export const OverlapGroupWrapperSubsection = (): JSX.Element => {
       description:
         "Expert human validation integrated seamlessly into AI workflows for enhanced accuracy and reliability.",
       borderColor: "border-[#ee5fa3]",
-      image: expertise1,
+      image: "/images/expertise-1.svg",
       imageFirst: true,
     },
   ];
@@ -49,11 +49,11 @@ export const OverlapGroupWrapperSubsection = (): JSX.Element => {
   return (
     <section className="relative w-full bg-[#0b0d14]">
       {/* Single Background Image */}
-      <img
+      {/* <img
         className="absolute inset-0 w-full h-full object-cover z-0"
         alt="Background"
         src="/unsplash-xutjz7ud7pi.png"
-      />
+      /> */}
 
       {/* Content Wrapper */}
       <div className="relative z-10 max-w-[1191px] mx-auto px-4 py-16 md:py-28">
