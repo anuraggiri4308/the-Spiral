@@ -33,7 +33,7 @@ export const OverlapWrapperSubsection = (): JSX.Element => {
             From Raw Data to Real Results
           </Badge>
 
-          <h1 className="font-bold text-white text-[32px] md:text-[64px] leading-[40px] md:leading-[80px] tracking-[-1.28px] font-['Rethink_Sans',Helvetica] max-w-[800px] text-center">
+          <h1 className="font-bold text-white text-[28px] md:text-[48px] leading-[40px] md:leading-[80px]  font-['Rethink_Sans',Helvetica] max-w-[800px] text-center">
             <span className="mr-1">How it</span>
             <span className="bg-gradient-to-r from-[#35E0ED] to-[#0074E5] bg-clip-text text-transparent">
               Works?

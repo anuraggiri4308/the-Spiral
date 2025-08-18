@@ -147,7 +147,7 @@ export const ElementSubsection = (): JSX.Element => {
             Fastest, Most Resilient AI Data Labelling & Training Partner
           </Badge>
 
-          <h1 className="font-bold text-white text-[32px] md:text-[64px] leading-[40px] md:leading-[80px] tracking-[-1.28px] font-['Rethink_Sans',Helvetica] max-w-[800px]">
+          <h1 className="font-bold text-white text-[28px] md:text-[48px] leading-[40px] md:leading-[80px] font-['Rethink_Sans',Helvetica] max-w-[800px]">
             Evolving Intelligence
             <br />
             <span className="bg-gradient-to-r from-[#35E0ED] to-[#0074E5] bg-clip-text text-transparent">

@@ -43,12 +43,12 @@ export const FrameWrapperSubsection = (): JSX.Element => {
             Latest Insights & Stories
           </Badge>
 
-          <h3 className="font-bold text-white text-[clamp(28px,6vw,64px)] leading-[1.2] tracking-[-1.28px] text-center font-['Rethink_Sans',Helvetica]">
+          <h1 className="font-bold text-white text-[28px] md:text-[48px] leading-[36px] md:leading-[60px] [font-family:'Rethink_Sans',Helvetica] max-w-[800px] text-center">
             <span className="mr-1">Latest From Our </span>
             <span className="bg-gradient-to-r from-[#35E0ED] to-[#0074E5] bg-clip-text text-transparent">
               Blog
             </span>
-          </h3>
+          </h1>
 
           <div className="w-full max-w-[828px] text-center">
             <p className="[font-family:'Rethink_Sans',Helvetica] font-medium text-lg md:text-xl tracking-[-0.40px] leading-7">

@@ -41,7 +41,7 @@ export const OverlapGroupWrapperSubsection = (): JSX.Element => {
       description:
         "Expert human validation integrated seamlessly into AI workflows for enhanced accuracy and reliability.",
       borderColor: "border-[#ee5fa3]",
-      image: "/images/expertise-1.svg",
+      image: expertise1,
       imageFirst: true,
     },
   ];
@@ -63,13 +63,12 @@ export const OverlapGroupWrapperSubsection = (): JSX.Element => {
             Full-Spectrum AI Data Solutions
           </Badge>
 
-          <h3 className="font-bold text-white text-[clamp(28px,6vw,64px)] leading-[1.2] tracking-[-1.28px] font-['Rethink_Sans',Helvetica]">
+          <h1 className="font-bold text-white text-[28px] md:text-[48px] leading-[36px] md:leading-[60px] [font-family:'Rethink_Sans',Helvetica] max-w-[800px] text-center">
             <span className="mr-1">Our </span>
             <span className="bg-gradient-to-r from-[#35E0ED] to-[#0074E5] bg-clip-text text-transparent">
               Expertise
             </span>
-          </h3>
-
+          </h1>
           <p className="[font-family:'Rethink_Sans',Helvetica] font-medium text-lg md:text-xl text-[#adb2b9] max-w-[828px]">
             Complete AI development ecosystem designed to transform your data
             into <span className="text-white">intelligent systems</span>
