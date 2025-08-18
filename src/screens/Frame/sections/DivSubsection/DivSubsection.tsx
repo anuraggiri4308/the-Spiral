@@ -10,7 +10,7 @@ export const DivSubsection = (): JSX.Element => {
         <CardContent className="p-0 relative h-full">
           <div className="flex flex-col items-center justify-center gap-9 absolute top-8 md:top-[95px] left-1/2 -translate-x-1/2 w-full max-w-[741px] px-4">
             <div className="flex flex-col items-center gap-8">
-              <h2 className="font-bold text-white text-[32px] md:text-[56px] leading-[40px] md:leading-[73.9px] text-center font-['Rethink_Sans',Helvetica]">
+              <h2 className="font-bold text-white text-[28px] md:text-[48px] leading-[40px] md:leading-[73.9px] text-center font-['Rethink_Sans',Helvetica]">
                 Ready to Evolve Your Data?
               </h2>
 
