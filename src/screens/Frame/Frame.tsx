@@ -8,20 +8,34 @@ import { FrameWrapperSubsection } from "./sections/FrameWrapperSubsection";
 import { OverlapGroupWrapperSubsection } from "./sections/OverlapGroupWrapperSubsection";
 import { OverlapWrapperSubsection } from "./sections/OverlapWrapperSubsection";
 import { SectionComponentNodeSubsection } from "./sections/SectionComponentNodeSubsection";
+import Blog from "../../screens/Frame/Pages/blogs";
+import { Route, Routes } from "react-router-dom";
 
 export const Frame = (): JSX.Element => {
   return (
     <Card className="w-full border-none">
       <CardContent className="flex flex-col items-start w-full p-0 relative overflow-x-hidden">
-        <ElementSubsection />
-        <ElementWrapperSubsection />
-        <OverlapWrapperSubsection />
-        <OverlapGroupWrapperSubsection />
+        <Routes>
+          {/* Home Page */}
+          <Route
+            path="/"
+            element={
+              <>
+                <ElementSubsection />
+                <ElementWrapperSubsection />
+                {/* <OverlapWrapperSubsection /> */}
+                <OverlapGroupWrapperSubsection />
+                <DivWrapperSubsection />
+                <FrameWrapperSubsection />
+                <DivSubsection />
+                <SectionComponentNodeSubsection />
+              </>
+            }
+          />
 
-        <DivWrapperSubsection />
-        <FrameWrapperSubsection />
-        <DivSubsection />
-        <SectionComponentNodeSubsection />
+          {/* Blog Page */}
+          <Route path="/blogs" element={<Blog />} />
+        </Routes>
       </CardContent>
     </Card>
   );

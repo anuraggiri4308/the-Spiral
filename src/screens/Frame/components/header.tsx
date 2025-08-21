@@ -1,0 +1,133 @@
+// src/components/common/Header.tsx
+import React from "react";
+import { Menu, X } from "lucide-react";
+import { Link } from "react-router-dom";
+import {
+  NavigationMenu,
+  NavigationMenuItem,
+  NavigationMenuList,
+} from "@radix-ui/react-navigation-menu";
+import { Button } from "../../../components/ui/button";
+
+export const Header = (): JSX.Element => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
+  const [activeIndex, setActiveIndex] = React.useState(0);
+
+  const navItems = [
+    { name: "Home", path: "/" },
+    { name: "Why Us?", path: "/" },
+    { name: "How It Works?", path: "/" },
+    { name: "Services", path: "/" },
+    { name: "Our Team", path: "/" },
+    { name: "Blog", path: "/blogs" },
+  ];
+
+  return (
+    <header className="flex w-full h-24 items-center justify-between px-4 md:px-[72px] py-4 bg-[#00030f] relative z-50">
+      <div className="flex items-center justify-between relative flex-1 self-stretch">
+        {/* Logo */}
+        <div className="flex items-center gap-2">
+          <Link
+            to="/"
+            className="text-white text-[22px] leading-[24px] tracking-[0.02em] font-semibold font-['Raleway',Helvetica]"
+          >
+            The Spiral
+          </Link>
+        </div>
+
+        {/* Desktop Nav */}
+        <NavigationMenu className="max-w-none hidden lg:block">
+          <NavigationMenuList className="flex items-center gap-[33.08px]">
+            {navItems.map((item, index) => (
+              <NavigationMenuItem key={index}>
+                <div
+                  onClick={() => setActiveIndex(index)}
+                  className="inline-flex flex-col items-start justify-center gap-[2px] p-[4.72px] cursor-pointer"
+                >
+                  <Link
+                    to={item.path}
+                    className={`relative w-fit mt-[-1.18px] [font-family:'Rethink_Sans',Helvetica] font-medium ${
+                      activeIndex === index ? "text-white" : "text-[#adb2b9]"
+                    } text-base leading-[32px]`}
+                  >
+                    {item.name}
+                  </Link>
+                  <div
+                    className={`h-[2px] w-full rounded bg-[#d9d9d9] transition-all duration-300 ease-in-out transform ${
+                      activeIndex === index
+                        ? "scale-x-100 opacity-100"
+                        : "scale-x-0 opacity-0"
+                    } origin-left`}
+                  />
+                </div>
+              </NavigationMenuItem>
+            ))}
+          </NavigationMenuList>
+        </NavigationMenu>
+
+        {/* Mobile Menu Button */}
+        <button
+          className="lg:hidden text-white p-2"
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+        >
+          {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+        </button>
+
+        {/* CTA Button */}
+        <div className="hidden lg:flex items-start justify-end">
+          <Link to="/book-demo">
+            <Button
+              variant="secondary"
+              className="group w-[170px] flex items-center justify-center gap-2 px-4 py-5 rounded-full border border-white font-medium text-base tracking-[-0.54px] leading-6 hover:bg-white hover:opacity-90 transition-all duration-300"
+            >
+              Book a Demo
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="w-5 h-5 ml-1 transition-transform group-hover:translate-x-1"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                  clipRule="evenodd"
+                />
+              </svg>
+            </Button>
+          </Link>
+        </div>
+      </div>
+
+      {/* Mobile Menu */}
+      {isMobileMenuOpen && (
+        <div className="absolute top-24 left-0 right-0 bg-[#00030f] border-t border-gray-800 lg:hidden z-40">
+          <div className="flex flex-col p-4">
+            {navItems.map((item, index) => (
+              <Link
+                key={index}
+                to={item.path}
+                onClick={() => {
+                  setActiveIndex(index);
+                  setIsMobileMenuOpen(false);
+                }}
+                className={`py-3 px-2 [font-family:'Rethink_Sans',Helvetica] font-medium ${
+                  activeIndex === index ? "text-white" : "text-[#adb2b9]"
+                } text-base hover:text-white transition-colors`}
+              >
+                {item.name}
+              </Link>
+            ))}
+            <Link to="/book-demo">
+              <Button
+                variant="secondary"
+                className="mt-4 w-full flex items-center justify-center gap-1 px-4 py-3 rounded-[32px] [font-family:'Rethink_Sans',Helvetica] font-medium  text-lg"
+              >
+                Book a Demo
+              </Button>
+            </Link>
+          </div>
+        </div>
+      )}
+    </header>
+  );
+};
