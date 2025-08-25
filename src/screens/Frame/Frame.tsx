@@ -9,6 +9,7 @@ import { OverlapGroupWrapperSubsection } from "./sections/OverlapGroupWrapperSub
 import { OverlapWrapperSubsection } from "./sections/OverlapWrapperSubsection";
 import { SectionComponentNodeSubsection } from "./sections/SectionComponentNodeSubsection";
 import Blog from "../../screens/Frame/Pages/blogs";
+import BlogDetailPage from "../../screens/Frame/Pages/blogsDetailPage";
 import { Route, Routes } from "react-router-dom";
 
 export const Frame = (): JSX.Element => {
@@ -35,6 +36,7 @@ export const Frame = (): JSX.Element => {
 
           {/* Blog Page */}
           <Route path="/blogs" element={<Blog />} />
+          <Route path="/blogsDetailPage" element={<BlogDetailPage />} />
         </Routes>
       </CardContent>
     </Card>

@@ -38,7 +38,7 @@ export const SectionComponentNodeSubsection = (): JSX.Element => {
     <footer className="w-full bg-[#00020f] py-16 px-4 md:px-28">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 text-center place-items-center">
         {/* Column 1 - Logo + Info */}
-        <div className="flex flex-col items-center justify-center gap-6 text-center">
+        <div className="flex flex-col items-center justify-center gap-6 text-center order-4 md:order-4 lg:order-1">
           <div className="text-white text-[22px] leading-[24px] tracking-[0.02em] font-semibold font-['Raleway',Helvetica]">
             The Spiral
           </div>
@@ -51,7 +51,7 @@ export const SectionComponentNodeSubsection = (): JSX.Element => {
         </div>
 
         {/* Column 2 - Navigation */}
-        <nav className="flex flex-col items-center justify-center gap-3">
+        <nav className="flex flex-col items-center justify-center gap-3 order-1 md:order-1 lg:order-2">
           {navigationLinks.map((link, index) => (
             <a
               key={index}
@@ -64,7 +64,7 @@ export const SectionComponentNodeSubsection = (): JSX.Element => {
         </nav>
 
         {/* Column 3 - Legal */}
-        <nav className="flex flex-col items-center justify-center gap-3">
+        <nav className="flex flex-col items-center justify-center gap-3 order-2 md:order-2 lg:order-3">
           {legalLinks.map((link, index) => (
             <a
               key={index}
@@ -77,7 +77,7 @@ export const SectionComponentNodeSubsection = (): JSX.Element => {
         </nav>
 
         {/* Column 4 - Contact + Social */}
-        <div className="flex flex-col items-center justify-center gap-8 text-center">
+        <div className="flex flex-col items-center justify-center gap-8 text-center order-3 md:order-3 lg:order-4">
           <div className="flex flex-col gap-6">
             <a
               href="mailto:hr@thespiral.ai"

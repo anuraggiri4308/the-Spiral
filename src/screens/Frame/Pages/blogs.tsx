@@ -273,7 +273,7 @@ export const Blogs = (): JSX.Element => {
             {currentPosts.map((post, index) => (
               <Card
                 key={index}
-                className="flex flex-col w-full max-w-[372px] mx-auto bg-transparent border-none"
+                className="flex flex-col w-full max-w-[372px] mx-auto bg-transparent border-none mb-8"
               >
                 <CardContent className="flex flex-col items-start gap-6 p-0">
                   <img

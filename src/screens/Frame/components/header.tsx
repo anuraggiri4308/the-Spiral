@@ -1,7 +1,7 @@
 // src/components/common/Header.tsx
-import React from "react";
+import React, { useEffect } from "react";
 import { Menu, X } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import {
   NavigationMenu,
   NavigationMenuItem,
@@ -13,19 +13,27 @@ export const Header = (): JSX.Element => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
   const [activeIndex, setActiveIndex] = React.useState(0);
 
+  const location = useLocation();
+
   const navItems = [
     { name: "Home", path: "/" },
     { name: "Why Us?", path: "/" },
     { name: "How It Works?", path: "/" },
     { name: "Services", path: "/" },
-    { name: "Our Team", path: "/" },
+    { name: "Our Team", path: "/blogsDetailPage" },
     { name: "Blog", path: "/blogs" },
   ];
 
+  // ✅ Sync activeIndex with current route
+  useEffect(() => {
+    const index = navItems.findIndex((item) => item.path === location.pathname);
+    if (index !== -1) setActiveIndex(index);
+  }, [location.pathname]);
+
   return (
     <header className="flex w-full h-24 items-center justify-between px-4 md:px-[72px] py-4 bg-[#00030f] relative z-50">
-      <div className="flex items-center justify-between relative flex-1 self-stretch">
-        {/* Logo */}
+      <div className="flex items-center justify-between flex-1 self-stretch">
+        {/* ✅ Logo (fixed, not moving) */}
         <div className="flex items-center gap-2">
           <Link
             to="/"
@@ -35,7 +43,7 @@ export const Header = (): JSX.Element => {
           </Link>
         </div>
 
-        {/* Desktop Nav */}
+        {/* ✅ Desktop Nav */}
         <NavigationMenu className="max-w-none hidden lg:block">
           <NavigationMenuList className="flex items-center gap-[33.08px]">
             {navItems.map((item, index) => (
@@ -52,6 +60,7 @@ export const Header = (): JSX.Element => {
                   >
                     {item.name}
                   </Link>
+                  {/* Underline */}
                   <div
                     className={`h-[2px] w-full rounded bg-[#d9d9d9] transition-all duration-300 ease-in-out transform ${
                       activeIndex === index
@@ -65,7 +74,7 @@ export const Header = (): JSX.Element => {
           </NavigationMenuList>
         </NavigationMenu>
 
-        {/* Mobile Menu Button */}
+        {/* ✅ Mobile Menu Toggle (fixed position) */}
         <button
           className="lg:hidden text-white p-2"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -73,7 +82,7 @@ export const Header = (): JSX.Element => {
           {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
 
-        {/* CTA Button */}
+        {/* CTA Button (Desktop only) */}
         <div className="hidden lg:flex items-start justify-end">
           <Link to="/book-demo">
             <Button
@@ -98,7 +107,7 @@ export const Header = (): JSX.Element => {
         </div>
       </div>
 
-      {/* Mobile Menu */}
+      {/* ✅ Mobile Menu (slides under header, logo + close stay fixed) */}
       {isMobileMenuOpen && (
         <div className="absolute top-24 left-0 right-0 bg-[#00030f] border-t border-gray-800 lg:hidden z-40">
           <div className="flex flex-col p-4">
