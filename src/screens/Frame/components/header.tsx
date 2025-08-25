@@ -11,29 +11,39 @@ import { Button } from "../../../components/ui/button";
 
 export const Header = (): JSX.Element => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
-  const [activeIndex, setActiveIndex] = React.useState(0);
+  const [activeIndex, setActiveIndex] = React.useState<number | null>(null);
 
   const location = useLocation();
 
   const navItems = [
     { name: "Home", path: "/" },
-    { name: "Why Us?", path: "/" },
-    { name: "How It Works?", path: "/" },
-    { name: "Services", path: "/" },
+    { name: "Why Us?", path: "/#why-us" },
+    { name: "How It Works?", path: "/#how-it-works" },
+    { name: "Services", path: "/#services" },
     { name: "Our Team", path: "/blogsDetailPage" },
     { name: "Blog", path: "/blogs" },
   ];
 
-  // ✅ Sync activeIndex with current route
+  // ✅ Match pathname + hash
   useEffect(() => {
-    const index = navItems.findIndex((item) => item.path === location.pathname);
-    if (index !== -1) setActiveIndex(index);
-  }, [location.pathname]);
+    const currentPath = location.pathname + (location.hash || "");
+    const index = navItems.findIndex((item) => item.path === currentPath);
+
+    if (index !== -1) {
+      setActiveIndex(index);
+    } else {
+      // fallback: only match pathname (ignore hash)
+      const fallbackIndex = navItems.findIndex(
+        (item) => item.path.split("#")[0] === location.pathname
+      );
+      if (fallbackIndex !== -1) setActiveIndex(fallbackIndex);
+    }
+  }, [location]);
 
   return (
     <header className="flex w-full h-24 items-center justify-between px-4 md:px-[72px] py-4 bg-[#00030f] relative z-50">
       <div className="flex items-center justify-between flex-1 self-stretch">
-        {/* ✅ Logo (fixed, not moving) */}
+        {/* ✅ Logo */}
         <div className="flex items-center gap-2">
           <Link
             to="/"
@@ -74,7 +84,7 @@ export const Header = (): JSX.Element => {
           </NavigationMenuList>
         </NavigationMenu>
 
-        {/* ✅ Mobile Menu Toggle (fixed position) */}
+        {/* ✅ Mobile Menu Toggle */}
         <button
           className="lg:hidden text-white p-2"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -107,7 +117,7 @@ export const Header = (): JSX.Element => {
         </div>
       </div>
 
-      {/* ✅ Mobile Menu (slides under header, logo + close stay fixed) */}
+      {/* ✅ Mobile Menu */}
       {isMobileMenuOpen && (
         <div className="absolute top-24 left-0 right-0 bg-[#00030f] border-t border-gray-800 lg:hidden z-40">
           <div className="flex flex-col p-4">
