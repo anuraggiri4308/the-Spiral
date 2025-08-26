@@ -6,10 +6,9 @@ import { ElementSubsection } from "./sections/ElementSubsection";
 import { ElementWrapperSubsection } from "./sections/ElementWrapperSubsection";
 import { FrameWrapperSubsection } from "./sections/FrameWrapperSubsection";
 import { OverlapGroupWrapperSubsection } from "./sections/OverlapGroupWrapperSubsection";
-import { OverlapWrapperSubsection } from "./sections/OverlapWrapperSubsection";
 import { SectionComponentNodeSubsection } from "./sections/SectionComponentNodeSubsection";
-import Blog from "../../screens/Frame/Pages/blogs";
-import BlogDetailPage from "../../screens/Frame/Pages/blogsDetailPage";
+import Blogs from "../../screens/Frame/Pages/blogs/blogs";
+import BlogsDetailPage from "../../screens/Frame/Pages/blogs/blogsDetailPage";
 import { Route, Routes } from "react-router-dom";
 
 export const Frame = (): JSX.Element => {
@@ -24,7 +23,6 @@ export const Frame = (): JSX.Element => {
               <>
                 <ElementSubsection />
                 <ElementWrapperSubsection />
-                {/* <OverlapWrapperSubsection /> */}
                 <OverlapGroupWrapperSubsection />
                 <DivWrapperSubsection />
                 <FrameWrapperSubsection />
@@ -34,9 +32,10 @@ export const Frame = (): JSX.Element => {
             }
           />
 
-          {/* Blog Page */}
-          <Route path="/blogs" element={<Blog />} />
-          <Route path="/blogsDetailPage" element={<BlogDetailPage />} />
+          {/* Blog Pages */}
+          <Route path="/blogs" element={<Blogs />} />
+          <Route path="/blogs/:slug" element={<BlogsDetailPage />} />
+          {/* (Optional) Direct detail page route */}
         </Routes>
       </CardContent>
     </Card>

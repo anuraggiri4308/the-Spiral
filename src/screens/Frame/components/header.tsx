@@ -20,7 +20,7 @@ export const Header = (): JSX.Element => {
     { name: "Why Us?", path: "/#why-us" },
     { name: "How It Works?", path: "/#how-it-works" },
     { name: "Services", path: "/#services" },
-    { name: "Our Team", path: "/blogsDetailPage" },
+    { name: "Our Team", path: "/#teams" },
     { name: "Blog", path: "/blogs" },
   ];
 
