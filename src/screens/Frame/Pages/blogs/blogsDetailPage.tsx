@@ -38,12 +38,6 @@ const socialLinks: {
     baseUrl: "https://twitter.com/intent/tweet?url=",
     hoverColor: "#1DA1F2",
   },
-  {
-    icon: FaInstagram,
-    name: "Instagram",
-    baseUrl: "https://www.instagram.com/", // Instagram doesn't allow direct URL shares
-    hoverColor: "#E4405F",
-  },
 ];
 
 const BlogsDetailPage = (): JSX.Element => {
