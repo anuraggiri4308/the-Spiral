@@ -267,7 +267,7 @@ export const allBlogPosts = [
     image: blog1,
     category: "TECHNOLOGY",
     date: "November 22, 2021",
-    title: "Growth Hacking Tips for Startups",
+    title: "product development, and sales",
     slug: "Growth-Hacking-Tips-for-Startups",
     description:
       "Scalable ML ops platform with automated training pipelines and continuous model deployment.",
@@ -354,7 +354,7 @@ export const allBlogPosts = [
     image: blog1,
     category: "TECHNOLOGY",
     date: "November 22, 2021",
-    title: "Growth Hacking Tips for Startups",
+    title: "product development, and sales",
     slug: "Growth-Hacking-Tips-for-Startups",
     description:
       "Scalable ML ops platform with automated training pipelines and continuous model deployment.",
@@ -441,7 +441,7 @@ export const allBlogPosts = [
     image: blog1,
     category: "TECHNOLOGY",
     date: "November 22, 2021",
-    title: "Growth Hacking Tips for Startups",
+    title: "product development, and sales",
     slug: "Growth-Hacking-Tips-for-Startups",
     description:
       "Scalable ML ops platform with automated training pipelines and continuous model deployment.",
