@@ -2,6 +2,8 @@ import React from "react";
 import { Card, CardContent } from "../../../../components/ui/card";
 import { Badge } from "../../../../components/ui/badge";
 import blog1 from "/images/blog-1.svg";
+import { Link } from "react-router-dom";
+import { allBlogPosts } from "../../Pages/blogs/blogsData";
 
 export const FrameWrapperSubsection = (): JSX.Element => {
   const articles = [
@@ -63,67 +65,67 @@ export const FrameWrapperSubsection = (): JSX.Element => {
         </div>
 
         {/* Articles */}
+        {/* Articles */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-[42px] w-full">
-          {articles.map((article) => (
-            <Card
-              key={article.id}
-              className="bg-transparent border-none transition-transform duration-300"
-            >
-              <CardContent className="p-0">
-                <div className="flex flex-col gap-6">
-                  <img
-                    className="w-full h-[172px] object-cover"
-                    alt="Article thumbnail"
-                    src={article.image}
-                  />
+          {allBlogPosts
+            .slice(0, 3) // get the first 3 blogs (latest)
+            .map((post, index) => (
+              <Card
+                key={index}
+                className="bg-transparent border-none transition-transform duration-300"
+              >
+                <CardContent className="p-0">
+                  <div className="flex flex-col gap-6">
+                    <img
+                      className="w-full h-[172px] object-cover"
+                      alt={post.title}
+                      src={post.image}
+                    />
 
-                  <div className="flex flex-col gap-3">
-                    <span className="[font-family:'Rethink_Sans',Helvetica] font-normal text-[#adb2b9b2] text-sm leading-6">
-                      {article.category} • {article.timeAgo}
-                    </span>
-
-                    <h3 className="[font-family:'Rethink_Sans',Helvetica] font-bold text-white text-[24px] md:text-[28px] leading-8">
-                      {article.title}
-                    </h3>
-
-                    <p className="[font-family:'Rethink_Sans',Helvetica] font-normal text-[#adb2b9] text-base leading-6">
-                      {article.description}
-                    </p>
-
-                    {/* Read More Button */}
-                    <div className="flex items-center gap-2 mt-1 cursor-pointer group transition-all duration-300">
-                      <span className="relative font-medium text-lg tracking-[-0.54px] leading-6 whitespace-nowrap cursor-pointer">
-                        <span
-                          className="
-      absolute inset-0 bg-gradient-to-r from-[#35E0ED] to-[#0074E5] bg-clip-text text-transparent opacity-0
-      transition-opacity duration-300 ease-in-out group-hover:opacity-100 tracking-wide
-    "
-                        >
-                          Read More
-                        </span>
-                        <span className="relative tracking-wide text-white transition-colors duration-300 ease-in-out group-hover:text-transparent">
-                          Read More
-                        </span>
+                    <div className="flex flex-col gap-3">
+                      <span className="[font-family:'Rethink_Sans',Helvetica] font-normal text-[#adb2b9b2] text-sm leading-6">
+                        {post.category} • {post.date}
                       </span>
 
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="w-5 h-5 text-white transition-transform group-hover:translate-x-1"
-                        viewBox="0 0 20 20"
-                        fill="currentColor"
-                      >
-                        <path
-                          fillRule="evenodd"
-                          d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                          clipRule="evenodd"
-                        />
-                      </svg>
+                      <h3 className="[font-family:'Rethink_Sans',Helvetica] font-bold text-white text-[24px] md:text-[28px] leading-8">
+                        {post.title}
+                      </h3>
+
+                      <p className="[font-family:'Rethink_Sans',Helvetica] font-normal text-[#adb2b9] text-base leading-6">
+                        {post.description}
+                      </p>
+
+                      {/* Read More Button */}
+                      <Link to={`/blogs/${post.slug}`}>
+                        <div className="flex items-center gap-2 mt-1 cursor-pointer group transition-all duration-300">
+                          <span className="relative font-medium text-lg tracking-[-0.54px] leading-6 whitespace-nowrap cursor-pointer">
+                            <span className="absolute inset-0 bg-gradient-to-r from-[#35E0ED] to-[#0074E5] bg-clip-text text-transparent opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100 tracking-wide">
+                              Read More
+                            </span>
+                            <span className="relative tracking-wide text-white transition-colors duration-300 ease-in-out group-hover:text-transparent">
+                              Read More
+                            </span>
+                          </span>
+
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            className="w-5 h-5 text-white transition-transform group-hover:translate-x-1"
+                            viewBox="0 0 20 20"
+                            fill="currentColor"
+                          >
+                            <path
+                              fillRule="evenodd"
+                              d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                              clipRule="evenodd"
+                            />
+                          </svg>
+                        </div>
+                      </Link>
                     </div>
                   </div>
-                </div>
-              </CardContent>
-            </Card>
-          ))}
+                </CardContent>
+              </Card>
+            ))}
         </div>
       </div>
     </section>

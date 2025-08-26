@@ -50,6 +50,7 @@ const BlogsDetailPage = (): JSX.Element => {
   const [activeSection, setActiveSection] = useState<string>("");
   const [isAsideFixed, setIsAsideFixed] = useState(true);
   const [asideTop, setAsideTop] = useState(0);
+  const [copied, setCopied] = useState(false);
 
   // ✅ Always scroll to top when opening this page
   useEffect(() => {
@@ -128,14 +129,20 @@ const BlogsDetailPage = (): JSX.Element => {
     }
   };
 
-  const handleShare = async (baseUrl: string) => {
-    const currentUrl = window.location.href;
+  const handleShare = (baseUrl: string) => {
+    const currentUrl = `${window.location.origin}${window.location.pathname}`;
+    window.open(`${baseUrl}${encodeURIComponent(currentUrl)}`, "_blank");
+  };
+
+  const handleCopyLink = async () => {
+    const currentUrl = `${window.location.origin}${window.location.pathname}`;
     try {
       await navigator.clipboard.writeText(currentUrl);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000); // Reset after 2s
     } catch (err) {
-      console.error("Clipboard copy failed:", err);
+      console.error("Failed to copy link:", err);
     }
-    window.open(`${baseUrl}${encodeURIComponent(currentUrl)}`, "_blank");
   };
 
   if (!blog) {
@@ -280,21 +287,18 @@ const BlogsDetailPage = (): JSX.Element => {
                     <h5 className="font-bold text-white text-base mb-3">
                       Share Article
                     </h5>
-                    <div className="flex items-center gap-3">
+                    <div className="flex items-center gap-3 flex-wrap">
                       {socialLinks.map(
                         ({ icon: Icon, baseUrl, hoverColor }, idx) => (
                           <button
                             key={idx}
                             onClick={() => handleShare(baseUrl)}
-                            className="w-10 h-10 rounded-full border border-[#adb2b9] flex items-center justify-center text-[#adb2b9] transition-all"
+                            className="text-[#adb2b9] transition-colors hover:scale-110 mr-2"
+                            style={{ fontSize: "20px" }}
                             onMouseEnter={(e) => {
-                              e.currentTarget.style.backgroundColor =
-                                hoverColor;
-                              e.currentTarget.style.color = "#fff";
+                              e.currentTarget.style.color = hoverColor;
                             }}
                             onMouseLeave={(e) => {
-                              e.currentTarget.style.backgroundColor =
-                                "transparent";
                               e.currentTarget.style.color = "#adb2b9";
                             }}
                           >
@@ -302,6 +306,14 @@ const BlogsDetailPage = (): JSX.Element => {
                           </button>
                         )
                       )}
+
+                      {/* ✅ Copy Link button */}
+                      <button
+                        onClick={handleCopyLink}
+                        className="px-4 py-2 rounded-lg border border-[#adb2b9] text-[#adb2b9] text-sm transition-all hover:bg-white hover:text-black"
+                      >
+                        {copied ? "Copied!" : "Copy Link"}
+                      </button>
                     </div>
                   </div>
                 </div>
