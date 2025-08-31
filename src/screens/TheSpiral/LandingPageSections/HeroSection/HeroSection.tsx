@@ -13,19 +13,27 @@ export const HeroSection = (): JSX.Element => {
         <Header />
 
         {/* Background Image */}
+        {/* Background Image - hidden on mobile */}
         <img
-          className="absolute w-full md:w-[1147px] h-[400px] md:h-[640px] top-[95px] left-0 md:left-[293px] object-cover"
+          className="absolute top-[95px] left-0 w-full h-[640px] object-cover hidden md:block"
           alt="Background Image"
           src={heroImage}
         />
 
         {/* Hero Content */}
-        <div className="inline-flex flex-col items-start gap-6 absolute top-[220px] left-4 md:left-[72px] right-4 md:right-auto">
+        <div
+          className="
+  flex flex-col items-center justify-center 
+  text-center px-4 py-16
+  md:inline-flex md:items-start md:text-left md:gap-6 
+  md:absolute md:top-[220px] md:left-[72px] md:right-auto md:px-0 md:py-0
+"
+        >
           <Badge className="px-4 py-2.5 rounded-full font-medium text-white text-base bg-transparent shadow-[0px_2px_12px_#07051880] backdrop-blur-[11.3px] before:content-[''] before:absolute before:inset-0 before:p-[0.94px] before:rounded-[100px] before:[background:linear-gradient(1deg,rgba(255,255,255,0.1)_0%,rgba(255,255,255,0)_38%)] before:[-webkit-mask:linear-gradient(#fff_0_0)_content-box,linear-gradient(#fff_0_0)] before:[-webkit-mask-composite:xor] before:[mask-composite:exclude] before:z-[1] before:pointer-events-none [background:radial-gradient(50%_50%_at_50%_0%,rgba(255,255,255,0.1)_0%,rgba(255,255,255,0)_100%),linear-gradient(180deg,rgba(255,255,255,0.1)_0%,rgba(255,255,255,0.08)_100%)]">
             Fastest, Most Resilient AI Data Labelling & Training Partner
           </Badge>
 
-          <h1 className="font-bold text-white text-[28px] md:text-[48px] leading-[40px] md:leading-[80px] font-['Rethink_Sans',Helvetica] max-w-[800px]">
+          <h1 className="mt-6 font-bold text-white text-[28px] md:text-[48px] leading-[40px] md:leading-[80px] font-['Rethink_Sans',Helvetica] max-w-[800px]">
             Evolving Intelligence
             <br />
             <span className="bg-gradient-to-r from-[#35E0ED] to-[#0074E5] bg-clip-text text-transparent">
@@ -34,7 +42,7 @@ export const HeroSection = (): JSX.Element => {
           </h1>
 
           {/* Description + CTA */}
-          <div className="inline-flex flex-col items-start gap-8">
+          <div className="mt-6 flex flex-col items-center md:items-start gap-8">
             <div className="max-w-[715px] text-lg md:text-xl font-medium text-[#adb2b9] tracking-[-0.08px] leading-7">
               Transform raw data into evolving artificial intelligence with our
               organic approach to machine learning. Just like DNA adapts and

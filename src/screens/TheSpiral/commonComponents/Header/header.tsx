@@ -41,7 +41,7 @@ export const Header = (): JSX.Element => {
   }, [location]);
 
   return (
-    <header className="flex w-full h-24 items-center justify-between px-4 md:px-[72px] py-4 bg-[#00030f] relative z-50">
+    <header className="flex w-full h-24 items-center justify-between px-4 md:px-[72px] py-4 bg-[#00030f] relative z-50 border-b border-white/10">
       <div className="flex items-center justify-between flex-1 self-stretch">
         {/* ✅ Logo */}
         <div className="flex items-center gap-2">
