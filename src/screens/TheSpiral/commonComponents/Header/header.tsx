@@ -118,20 +118,9 @@ export const Header = (): JSX.Element => {
       </div>
 
       {/* ✅ Mobile Menu */}
-      {/* ✅ Mobile Menu */}
+      {/* ✅ Mobile Menu (below header) */}
       {isMobileMenuOpen && (
-        <div className="fixed inset-0 bg-[#00030f] z-40 lg:hidden flex flex-col">
-          {/* Close Button inside overlay (optional, since you already have one in header) */}
-          <div className="flex items-center justify-end p-4 border-b border-gray-800">
-            <button
-              className="text-white p-2"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              <X size={28} />
-            </button>
-          </div>
-
-          {/* Menu Links */}
+        <div className="fixed top-24 left-0 right-0 bottom-0 bg-[#00030f] z-40 lg:hidden flex flex-col">
           <div className="flex flex-col p-6 space-y-4 overflow-y-auto">
             {navItems.map((item, index) => (
               <Link
@@ -149,7 +138,6 @@ export const Header = (): JSX.Element => {
               </Link>
             ))}
 
-            {/* CTA Button */}
             <Link to="/book-demo">
               <Button
                 variant="secondary"

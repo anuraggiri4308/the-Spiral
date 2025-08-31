@@ -51,6 +51,19 @@
       {
         "type": "p",
         "text": "Growth hacking refers to using creative, low-cost strategies to help businesses acquire and retain customers. It’s commonly used by startups who need quick growth with limited budgets."
+      },
+      {
+        "type": "image",
+        "src": "/images/blog-1.svg",
+        "alt": "Sample Image"
+      },
+      {
+        "type": "p",
+        "text": "Here is some <strong>bold</strong> and <em>italic</em> text."
+      },
+      {
+        "type": "ul",
+        "items": ["First point", "Second point", "Third point"]
       }
     ]
   },
@@ -61,7 +74,30 @@
     "date": "November 24, 2021",
     "title": "Understanding Market Volatility",
     "slug": "understanding-market-volatility",
-    "description": "A beginner’s guide to navigating ups and downs in financial markets.",
+    "description": "How AI-driven tools are reshaping modern product development and boosting sales efficiency.",
+    "authorName": "Mary Jose",
+    "authorRole": "Senior Software Engineer",
+    "authorImage": "/images/blog-1.svg",
+    "content": [
+      {
+        "type": "h2",
+        "id": "what-is-growth-hack",
+        "text": "What is growth hack?"
+      },
+      {
+        "type": "p",
+        "text": "Growth hacking refers to using creative, low-cost strategies to help businesses acquire and retain customers. It’s commonly used by startups who need quick growth with limited budgets."
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "image": "/images/blog-1.svg",
+    "category": "FINANCE",
+    "date": "November 24, 2021",
+    "title": "Understanding Market Volatility",
+    "slug": "understanding-market-volatility",
+    "description": "How AI-driven tools are reshaping modern product development and boosting sales efficiency.",
     "authorName": "Mary Jose",
     "authorRole": "Senior Software Engineer",
     "authorImage": "/images/blog-1.svg",

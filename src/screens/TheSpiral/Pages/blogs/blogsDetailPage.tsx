@@ -11,7 +11,7 @@ import {
   FaFacebookF,
   FaInstagram,
   FaTwitter,
-} from "react-icons/fa"; // ✅ social icons
+} from "react-icons/fa";
 import { IconType } from "react-icons";
 
 const socialLinks: {
@@ -52,14 +52,12 @@ const BlogsDetailPage = (): JSX.Element => {
   const [asideTop, setAsideTop] = useState(0);
   const [copied, setCopied] = useState(false);
 
-  // ✅ Always scroll to top when opening this page
-  useEffect(() => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  }, []);
+  // ✅ Scroll to top
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, [slug]);
 
+  // ✅ Collect TOC headings
   useEffect(() => {
     if (!blog) return;
 
@@ -78,7 +76,7 @@ const BlogsDetailPage = (): JSX.Element => {
     );
   }, [activeSection, blog]);
 
-  // Scroll spy logic
+  // ✅ Scroll spy logic
   useEffect(() => {
     const handleScroll = () => {
       const headingElements = document.querySelectorAll("h2[id]");
@@ -124,10 +122,7 @@ const BlogsDetailPage = (): JSX.Element => {
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
-      element.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   };
 
@@ -141,7 +136,7 @@ const BlogsDetailPage = (): JSX.Element => {
     try {
       await navigator.clipboard.writeText(currentUrl);
       setCopied(true);
-      setTimeout(() => setCopied(false), 2000); // Reset after 2s
+      setTimeout(() => setCopied(false), 2000);
     } catch (err) {
       console.error("Failed to copy link:", err);
     }
@@ -155,48 +150,84 @@ const BlogsDetailPage = (): JSX.Element => {
     );
   }
 
-  // ✅ Convert structured content blocks into React nodes
+  // ✅ Flexible renderer
   const renderContent = () => {
     return blog.content.map((block, index) => {
-      if (block.type === "h2") {
-        return (
-          <h2
-            key={index}
-            id={block.id}
-            className="font-bold text-white text-2xl sm:text-[28px] leading-[38px] mb-4 scroll-mt-8"
-          >
-            {block.text}
-          </h2>
-        );
+      switch (block.type) {
+        case "h2":
+          return (
+            <h2
+              key={index}
+              id={block.id}
+              className="font-bold text-white text-2xl sm:text-[28px] leading-[38px] mb-4 scroll-mt-8"
+            >
+              {block.text}
+            </h2>
+          );
+        case "p":
+          return (
+            <p
+              key={index}
+              className="text-[#adb2b9] text-base sm:text-lg leading-7 mb-6"
+              dangerouslySetInnerHTML={{ __html: block.text }}
+            />
+          );
+        case "blockquote":
+          return (
+            <blockquote
+              key={index}
+              className="relative pl-6 border-l-4 border-gray-600 text-white italic mb-8"
+            >
+              {block.text}
+            </blockquote>
+          );
+        case "image":
+          return (
+            <img
+              key={index}
+              src={(block as any).src}
+              alt={(block as any).alt || "Blog Image"}
+              className="w-full h-auto rounded-lg my-6"
+            />
+          );
+        case "em":
+          return (
+            <p
+              key={index}
+              className="text-[#adb2b9] italic text-base sm:text-lg leading-7 mb-6"
+            >
+              {block.text}
+            </p>
+          );
+        case "ul":
+          return (
+            <ul key={index} className="list-disc pl-6 text-[#adb2b9] mb-6">
+              {(block as any).items?.map((item: string, i: number) => (
+                <li key={i} className="mb-2">
+                  {item}
+                </li>
+              ))}
+            </ul>
+          );
+        case "ol":
+          return (
+            <ol key={index} className="list-decimal pl-6 text-[#adb2b9] mb-6">
+              {(block as any).items?.map((item: string, i: number) => (
+                <li key={i} className="mb-2">
+                  {item}
+                </li>
+              ))}
+            </ol>
+          );
+        default:
+          return null;
       }
-      if (block.type === "p") {
-        return (
-          <p
-            key={index}
-            className="text-[#adb2b9] text-base sm:text-lg leading-7 mb-6"
-          >
-            {block.text}
-          </p>
-        );
-      }
-      if (block.type === "blockquote") {
-        return (
-          <blockquote
-            key={index}
-            className="relative pl-6 border-l-4 border-gray-600 text-white italic mb-8"
-          >
-            {block.text}
-          </blockquote>
-        );
-      }
-      return null;
     });
   };
 
   return (
     <>
       <Header />
-      {/* Page layout */}
       <div className="w-full min-h-screen bg-[#00030c]">
         <div className="flex flex-col lg:flex-row gap-8 px-4 sm:px-6 md:px-12 lg:px-[120px] pt-10 lg:pt-20 relative">
           {/* Main Content */}
@@ -217,7 +248,6 @@ const BlogsDetailPage = (): JSX.Element => {
                 src={blog.image}
               />
 
-              {/* Render styled blog content */}
               <section className="flex flex-col gap-6">
                 {renderContent()}
               </section>
@@ -279,7 +309,6 @@ const BlogsDetailPage = (): JSX.Element => {
                     </p>
                   </div>
 
-                  {/* ✅ Social Share Buttons */}
                   <div>
                     <h5 className="font-bold text-white text-base mb-3">
                       Share Article
@@ -303,8 +332,6 @@ const BlogsDetailPage = (): JSX.Element => {
                           </button>
                         )
                       )}
-
-                      {/* ✅ Copy Link button */}
                       <button
                         onClick={handleCopyLink}
                         className="px-4 py-2 rounded-lg border border-[#adb2b9] text-[#adb2b9] text-sm transition-all hover:bg-white hover:text-black"
@@ -319,7 +346,6 @@ const BlogsDetailPage = (): JSX.Element => {
           </aside>
         </div>
 
-        {/* Footer sections (scroll trigger ends here) */}
         <div className="frame-wrapper-subsection">
           <HomePageBlogsSection />
         </div>

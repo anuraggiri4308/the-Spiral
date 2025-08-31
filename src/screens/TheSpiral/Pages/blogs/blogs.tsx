@@ -69,15 +69,15 @@ export const Blogs = (): JSX.Element => {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-[42px] w-full">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-6 lg:gap-8 w-full">
             {currentPosts.map((post, index) => (
               <Card
                 key={index}
-                className="flex flex-col w-full max-w-[372px] mx-auto bg-transparent border-none mb-8"
+                className="flex flex-col w-full  mx-auto bg-transparent border-none mb-8 bg-[#1A1C2A] px-5 py-7"
               >
                 <CardContent className="flex flex-col items-start gap-6 p-0">
                   <img
-                    className="w-full h-[172px] rounded-xl object-cover"
+                    className="w-full h-[185px] rounded-xl object-cover"
                     alt={post.title}
                     src={post.image}
                   />

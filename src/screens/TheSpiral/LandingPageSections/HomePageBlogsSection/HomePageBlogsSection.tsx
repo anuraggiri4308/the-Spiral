@@ -28,7 +28,7 @@ export const HomePageBlogsSection = (): JSX.Element => {
   );
 
   return (
-    <section className="w-full bg-[#0b0c13] pt-8 md:pt-12 pb-16 md:pb-10 flex justify-center">
+    <section className="w-full bg-[#0b0c13] pt-8 md:pt-12 pb-16 md:pb-20 flex justify-center">
       <div className="max-w-[1200px] w-full flex flex-col items-center gap-16 md:gap-[70px] px-4">
         {/* Section header */}
         <div className="flex flex-col items-center gap-6">
@@ -55,31 +55,33 @@ export const HomePageBlogsSection = (): JSX.Element => {
           </div>
         </div>
 
-        {/* Articles */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-[42px] w-full">
+        {/* Blog Cards (same style as Blogs page) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-6 lg:gap-8 w-full">
           {visiblePosts.map((post, index) => (
             <Card
               key={index}
-              className="bg-transparent border-none transition-transform duration-300"
+              className="flex flex-col w-full mx-auto bg-transparent border-none mb-8 bg-[#1A1C2A] px-5 py-7"
             >
-              <CardContent className="p-0">
-                <div className="flex flex-col gap-6">
-                  <img
-                    className="w-full h-[172px] object-cover"
-                    alt={post.title}
-                    src={post.image}
-                  />
+              <CardContent className="flex flex-col items-start gap-6 p-0">
+                <img
+                  className="w-full h-[185px] rounded-xl object-cover"
+                  alt={post.title}
+                  src={post.image}
+                />
 
-                  <div className="flex flex-col gap-3">
-                    <span className="[font-family:'Rethink_Sans',Helvetica] font-normal text-[#adb2b9b2] text-sm leading-6">
-                      {post.category} • {post.date}
-                    </span>
+                <div className="flex flex-col items-start w-full gap-3">
+                  <p className="[font-family:'Rethink_Sans',Helvetica] font-normal text-[#adb2b9b2] text-sm tracking-[0] leading-6">
+                    {post.category} • {post.date}
+                  </p>
 
-                    <h3 className="[font-family:'Rethink_Sans',Helvetica] font-bold text-white text-[24px] md:text-[28px] leading-8">
+                  <div className="flex items-center w-full">
+                    <h3 className="flex-1 [font-family:'Rethink_Sans',Helvetica] font-bold text-white text-xl sm:text-2xl lg:text-[24px] tracking-[1] leading-8">
                       {post.title}
                     </h3>
+                  </div>
 
-                    <p className="[font-family:'Rethink_Sans',Helvetica] font-normal text-[#adb2b9] text-base leading-6">
+                  <div className="flex flex-col items-start gap-4 w-full">
+                    <p className="w-full [font-family:'Rethink_Sans',Helvetica] font-normal text-[#adb2b9] text-sm sm:text-base tracking-[0] leading-6">
                       {post.description}
                     </p>
 
@@ -115,9 +117,9 @@ export const HomePageBlogsSection = (): JSX.Element => {
           ))}
         </div>
 
-        {/* Controls Row */}
+        {/* Controls + View All */}
         <div className="flex justify-between items-center w-full mt-4">
-          {/* Left/Right Arrows */}
+          {/* Arrows */}
           <div className="flex gap-2">
             <Button
               onClick={handlePrev}

@@ -12,10 +12,9 @@ export const HeroSection = (): JSX.Element => {
         {/* ✅ Header separated */}
         <Header />
 
-        {/* Background Image */}
         {/* Background Image - hidden on mobile */}
         <img
-          className="absolute top-[95px] left-0 w-full h-[640px] object-cover hidden md:block"
+          className="absolute top-[95px] left-0 w-full h-[740px] object-cover hidden md:block"
           alt="Background Image"
           src={heroImage}
         />
@@ -43,7 +42,7 @@ export const HeroSection = (): JSX.Element => {
 
           {/* Description + CTA */}
           <div className="mt-6 flex flex-col items-center md:items-start gap-8">
-            <div className="max-w-[715px] text-lg md:text-xl font-medium text-[#adb2b9] tracking-[-0.08px] leading-7">
+            <div className="max-w-[600px] text-lg md:text-xl font-medium text-[#adb2b9] tracking-[-0.08px] leading-7">
               Transform raw data into evolving artificial intelligence with our
               organic approach to machine learning. Just like DNA adapts and
               evolves,{" "}
