@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Card, CardContent } from "../../../../components/ui/card";
 import { Button } from "../../../../components/ui/button";
-import { DivSubsection } from "../../sections/DivSubsection";
-import { SectionComponentNodeSubsection } from "../../sections/SectionComponentNodeSubsection";
+import { HomeCTASection } from "../../sections/HomeCTASection";
+import { Footer } from "../../sections/Footer";
 import { Header } from "../../components/header";
 import { Badge } from "../../../../components/ui/badge";
 import { Link } from "react-router-dom";
@@ -174,8 +174,8 @@ export const Blogs = (): JSX.Element => {
             </div>
           </div>
         </main>
-        <DivSubsection />
-        <SectionComponentNodeSubsection />
+        <HomeCTASection />
+        <Footer />
       </section>
     </>
   );

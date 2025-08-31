@@ -6,7 +6,7 @@ import anuragImage from "/images/anurag.jpeg";
 import devbratImage from "/images/devbrat.jpeg";
 import kritiImage from "/images/kriti.png";
 
-export const DivWrapperSubsection = (): JSX.Element => {
+export const FounderSection = (): JSX.Element => {
   const teamMembers = [
     {
       id: 1,

@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Card, CardContent } from "../../../../components/ui/card";
-import { FrameWrapperSubsection } from "../../sections/FrameWrapperSubsection";
+import { HomePageBlogsSection } from "../../sections/HomePageBlogsSection";
 import { Header } from "../../components/header";
-import { DivSubsection } from "../../sections/DivSubsection";
-import { SectionComponentNodeSubsection } from "../../sections/SectionComponentNodeSubsection";
+import { HomeCTASection } from "../../sections/HomeCTASection";
+import { Footer } from "../../sections/Footer";
 import { allBlogPosts } from "./blogsData";
 import { useParams } from "react-router-dom";
 import {
@@ -56,17 +56,19 @@ const BlogsDetailPage = (): JSX.Element => {
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [slug]);
 
-  // Generate TOC dynamically from blog content
   useEffect(() => {
     if (!blog) return;
 
-    const parser = new DOMParser();
-    const doc = parser.parseFromString(blog.content, "text/html");
-    const headings = Array.from(doc.querySelectorAll("h2")).map((el) => ({
-      label: el.textContent || "",
-      id: el.id,
-    }));
+    const headings = blog.content
+      .filter((block) => block.type === "h2" && block.id)
+      .map((block) => ({
+        label: block.text,
+        id: block.id!,
+      }));
 
     setTableOfContentsItems(
       headings.map((heading) => ({
@@ -153,42 +155,37 @@ const BlogsDetailPage = (): JSX.Element => {
     );
   }
 
-  // Convert blog.content into React nodes with styles
+  // ✅ Convert structured content blocks into React nodes
   const renderContent = () => {
-    const parser = new DOMParser();
-    const doc = parser.parseFromString(blog.content, "text/html");
-    const nodes = Array.from(doc.body.childNodes);
-
-    return nodes.map((node, index) => {
-      if (node.nodeName === "H2") {
-        const el = node as HTMLElement;
+    return blog.content.map((block, index) => {
+      if (block.type === "h2") {
         return (
           <h2
             key={index}
-            id={el.id}
+            id={block.id}
             className="font-bold text-white text-2xl sm:text-[28px] leading-[38px] mb-4 scroll-mt-8"
           >
-            {el.textContent}
+            {block.text}
           </h2>
         );
       }
-      if (node.nodeName === "P") {
+      if (block.type === "p") {
         return (
           <p
             key={index}
             className="text-[#adb2b9] text-base sm:text-lg leading-7 mb-6"
           >
-            {node.textContent}
+            {block.text}
           </p>
         );
       }
-      if (node.nodeName === "BLOCKQUOTE") {
+      if (block.type === "blockquote") {
         return (
           <blockquote
             key={index}
             className="relative pl-6 border-l-4 border-gray-600 text-white italic mb-8"
           >
-            {node.textContent}
+            {block.text}
           </blockquote>
         );
       }
@@ -324,10 +321,10 @@ const BlogsDetailPage = (): JSX.Element => {
 
         {/* Footer sections (scroll trigger ends here) */}
         <div className="frame-wrapper-subsection">
-          <FrameWrapperSubsection />
+          <HomePageBlogsSection />
         </div>
-        <DivSubsection />
-        <SectionComponentNodeSubsection />
+        <HomeCTASection />
+        <Footer />
       </div>
     </>
   );

@@ -5,7 +5,7 @@ import { Header } from "../../components/header";
 import { Button } from "../../../../components/ui/button";
 import { Link } from "react-router-dom";
 
-export const ElementSubsection = (): JSX.Element => {
+export const HeroSection = (): JSX.Element => {
   return (
     <section className="relative w-full min-h-[740px] bg-[#00030c]">
       <div className="relative h-full">

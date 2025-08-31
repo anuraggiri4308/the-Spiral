@@ -1,0 +1,80 @@
+[
+  {
+    "id": 1,
+    "image": "/images/blog-1.svg",
+    "category": "TECHNOLOGY",
+    "date": "November 22, 2021",
+    "title": "Growth Hacking Tips for Startups",
+    "slug": "growth-hacking-tips-for-startups",
+    "description": "Scalable ML ops platform with automated training pipelines and continuous model deployment.",
+    "authorName": "Mary Jose",
+    "authorRole": "Senior Software Engineer",
+    "authorImage": "/images/blog-1.svg",
+    "content": [
+      {
+        "type": "h2",
+        "id": "what-is-growth-hack",
+        "text": "What is growth hack?"
+      },
+      {
+        "type": "p",
+        "text": "Growth hacking refers to using creative, low-cost strategies to help businesses acquire and retain customers. It’s commonly used by startups who need quick growth with limited budgets."
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "image": "/images/blog-1.svg",
+    "category": "TECHNOLOGY",
+    "date": "November 23, 2021",
+    "title": "Product Development and Sales",
+    "slug": "product-development-and-sales",
+    "description": "How AI-driven tools are reshaping modern product development and boosting sales efficiency.",
+    "authorName": "Mary Jose",
+    "authorRole": "Senior Software Engineer",
+    "authorImage": "/images/blog-1.svg",
+    "content": [
+      {
+        "type": "h2",
+        "id": "what-is-growth-hack",
+        "text": "What is growth hack?"
+      },
+      {
+        "type": "p",
+        "text": "Growth hacking refers to using creative, low-cost strategies to help businesses acquire and retain customers. It’s commonly used by startups who need quick growth with limited budgets."
+      },
+      {
+        "type": "h2",
+        "id": "what-is-growth-hack2",
+        "text": "What is growth hack?"
+      },
+      {
+        "type": "p",
+        "text": "Growth hacking refers to using creative, low-cost strategies to help businesses acquire and retain customers. It’s commonly used by startups who need quick growth with limited budgets."
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "image": "/images/blog-1.svg",
+    "category": "FINANCE",
+    "date": "November 24, 2021",
+    "title": "Understanding Market Volatility",
+    "slug": "understanding-market-volatility",
+    "description": "A beginner’s guide to navigating ups and downs in financial markets.",
+    "authorName": "Mary Jose",
+    "authorRole": "Senior Software Engineer",
+    "authorImage": "/images/blog-1.svg",
+    "content": [
+      {
+        "type": "h2",
+        "id": "what-is-growth-hack",
+        "text": "What is growth hack?"
+      },
+      {
+        "type": "p",
+        "text": "Growth hacking refers to using creative, low-cost strategies to help businesses acquire and retain customers. It’s commonly used by startups who need quick growth with limited budgets."
+      }
+    ]
+  }
+]

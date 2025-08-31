@@ -3,7 +3,7 @@ import React from "react";
 import { Button } from "../../../../components/ui/button";
 import { Card, CardContent } from "../../../../components/ui/card";
 
-export const DivSubsection = (): JSX.Element => {
+export const HomeCTASection = (): JSX.Element => {
   return (
     <section className="relative w-full py-16 md:py-28 bg-[#00020f] px-4">
       <Card className="mx-auto w-full max-w-[1216px] min-h-[398px] rounded-3xl overflow-hidden bg-[url('/images/evolve.png')] bg-cover bg-center">

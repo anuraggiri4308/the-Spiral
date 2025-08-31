@@ -8,7 +8,7 @@ import accurateAnnotation from "/images/Accurate-annotation.svg";
 import secure from "/images/secure.svg";
 import continuous from "/images/continous.svg";
 
-export const ElementWrapperSubsection = (): JSX.Element => {
+export const WhyChooseUs = (): JSX.Element => {
   const featureCards = [
     {
       image: personalisedModels,

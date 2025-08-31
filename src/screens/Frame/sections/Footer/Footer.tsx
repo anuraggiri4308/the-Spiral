@@ -8,7 +8,7 @@ import {
 } from "react-icons/fa";
 import { IconType } from "react-icons";
 
-export const SectionComponentNodeSubsection = (): JSX.Element => {
+export const Footer = (): JSX.Element => {
   const navigationLinks = [
     "Home",
     "Why Us",
@@ -30,7 +30,7 @@ export const SectionComponentNodeSubsection = (): JSX.Element => {
   const socialLinks: { icon: IconType; href: string; hoverColor: string }[] = [
     { icon: FaLinkedinIn, href: "https://linkedin.com", hoverColor: "#0077B5" },
     { icon: FaFacebookF, href: "https://facebook.com", hoverColor: "#1877F2" },
-    { icon: FaInstagram, href: "https://instagram.com", hoverColor: "#E4405F" },
+    // { icon: FaInstagram, href: "https://instagram.com", hoverColor: "#E4405F" },
     { icon: FaTwitter, href: "https://twitter.com", hoverColor: "#1DA1F2" },
   ];
 
@@ -81,13 +81,13 @@ export const SectionComponentNodeSubsection = (): JSX.Element => {
           <div className="flex flex-col gap-6">
             <a
               href="mailto:hr@thespiral.ai"
-              className="[font-family:'Rethink_Sans',Helvetica] font-normal text-[#2d67ff] text-base leading-8 underline"
+              className="[font-family:'Rethink_Sans',Helvetica] text-[#adb2b9] font-normal text-[#2d67ff] text-base leading-8 underline"
             >
               info@thespiral.ai
             </a>
             <a
               href="tel:+91-9783808306"
-              className="[font-family:'Rethink_Sans',Helvetica] font-normal text-[#2d67ff] text-base leading-8 underline"
+              className="[font-family:'Rethink_Sans',Helvetica] text-[#adb2b9] font-normal text-[#2d67ff] text-base leading-8 underline"
             >
               +91-9783808306
             </a>

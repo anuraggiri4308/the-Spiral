@@ -1,13 +1,12 @@
 import React, { useState } from "react";
 import { Card, CardContent } from "../../../../components/ui/card";
 import { Badge } from "../../../../components/ui/badge";
-import blog1 from "/images/blog-1.svg";
 import { Link } from "react-router-dom";
 import { allBlogPosts } from "../../Pages/blogs/blogsData";
 import { Button } from "../../../../components/ui/button";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-export const FrameWrapperSubsection = (): JSX.Element => {
+export const HomePageBlogsSection = (): JSX.Element => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const itemsPerPage = 3;
 

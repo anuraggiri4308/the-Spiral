@@ -5,7 +5,7 @@ import { Button } from "../../../../components/ui/button";
 import { Card, CardContent } from "../../../../components/ui/card";
 import expertise1 from "/images/expertise-1.svg";
 
-export const OverlapGroupWrapperSubsection = (): JSX.Element => {
+export const ExpertiseSection = (): JSX.Element => {
   // Data for service cards
   const serviceCards = [
     {

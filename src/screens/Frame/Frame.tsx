@@ -1,12 +1,12 @@
 import React from "react";
 import { Card, CardContent } from "../../components/ui/card";
-import { DivSubsection } from "./sections/DivSubsection";
-import { DivWrapperSubsection } from "./sections/DivWrapperSubsection";
-import { ElementSubsection } from "./sections/ElementSubsection";
-import { ElementWrapperSubsection } from "./sections/ElementWrapperSubsection";
-import { FrameWrapperSubsection } from "./sections/FrameWrapperSubsection";
-import { OverlapGroupWrapperSubsection } from "./sections/OverlapGroupWrapperSubsection";
-import { SectionComponentNodeSubsection } from "./sections/SectionComponentNodeSubsection";
+import { HomeCTASection } from "./sections/HomeCTASection";
+import { FounderSection } from "./sections/FounderSection";
+import { HeroSection } from "./sections/HeroSection";
+import { WhyChooseUs } from "./sections/WhyChooseUsSection";
+import { HomePageBlogsSection } from "./sections/HomePageBlogsSection";
+import { ExpertiseSection } from "./sections/ExpertiseSection";
+import { Footer } from "./sections/Footer";
 import Blogs from "../../screens/Frame/Pages/blogs/blogs";
 import BlogsDetailPage from "../../screens/Frame/Pages/blogs/blogsDetailPage";
 import { Route, Routes } from "react-router-dom";
@@ -21,13 +21,13 @@ export const Frame = (): JSX.Element => {
             path="/"
             element={
               <>
-                <ElementSubsection />
-                <ElementWrapperSubsection />
-                <OverlapGroupWrapperSubsection />
-                <DivWrapperSubsection />
-                <FrameWrapperSubsection />
-                <DivSubsection />
-                <SectionComponentNodeSubsection />
+                <HeroSection />
+                <WhyChooseUs />
+                <ExpertiseSection />
+                <FounderSection />
+                <HomePageBlogsSection />
+                <HomeCTASection />
+                <Footer />
               </>
             }
           />
