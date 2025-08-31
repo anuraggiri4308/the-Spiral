@@ -118,9 +118,21 @@ export const Header = (): JSX.Element => {
       </div>
 
       {/* ✅ Mobile Menu */}
+      {/* ✅ Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="absolute top-24 left-0 right-0 bg-[#00030f] border-t border-gray-800 lg:hidden z-40">
-          <div className="flex flex-col p-4">
+        <div className="fixed inset-0 bg-[#00030f] z-40 lg:hidden flex flex-col">
+          {/* Close Button inside overlay (optional, since you already have one in header) */}
+          <div className="flex items-center justify-end p-4 border-b border-gray-800">
+            <button
+              className="text-white p-2"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              <X size={28} />
+            </button>
+          </div>
+
+          {/* Menu Links */}
+          <div className="flex flex-col p-6 space-y-4 overflow-y-auto">
             {navItems.map((item, index) => (
               <Link
                 key={index}
@@ -131,15 +143,17 @@ export const Header = (): JSX.Element => {
                 }}
                 className={`py-3 px-2 [font-family:'Rethink_Sans',Helvetica] font-medium ${
                   activeIndex === index ? "text-white" : "text-[#adb2b9]"
-                } text-base hover:text-white transition-colors`}
+                } text-lg hover:text-white transition-colors`}
               >
                 {item.name}
               </Link>
             ))}
+
+            {/* CTA Button */}
             <Link to="/book-demo">
               <Button
                 variant="secondary"
-                className="mt-4 w-full flex items-center justify-center gap-1 px-4 py-3 rounded-[32px] [font-family:'Rethink_Sans',Helvetica] font-medium  text-lg"
+                className="mt-6 w-full flex items-center justify-center gap-1 px-4 py-4 rounded-[32px] [font-family:'Rethink_Sans',Helvetica] font-medium text-lg"
               >
                 Book a Demo
               </Button>
