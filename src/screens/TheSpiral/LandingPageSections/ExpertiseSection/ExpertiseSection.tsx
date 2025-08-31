@@ -3,7 +3,7 @@ import React from "react";
 import { Badge } from "../../../../components/ui/badge";
 import { Button } from "../../../../components/ui/button";
 import { Card, CardContent } from "../../../../components/ui/card";
-import expertise1 from "/images/expertise-1.svg";
+import expertise1 from "/public/images/expertise-1.svg";
 
 export const ExpertiseSection = (): JSX.Element => {
   // Data for service cards

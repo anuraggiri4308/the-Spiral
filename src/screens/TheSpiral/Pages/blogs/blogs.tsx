@@ -7,7 +7,7 @@ import { Footer } from "../../commonComponents/Footer";
 import { Header } from "../../commonComponents/Header/header";
 import { Badge } from "../../../../components/ui/badge";
 import { Link } from "react-router-dom";
-import { allBlogPosts } from "./blogsData"; // adjust path
+import { allBlogPosts } from "./blogsData";
 
 const POSTS_PER_PAGE = 15;
 

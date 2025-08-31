@@ -3,10 +3,10 @@ import { Badge } from "../../../../components/ui/badge";
 import { Card, CardContent } from "../../../../components/ui/card";
 
 // Import SVG images
-import personalisedModels from "/images/Personalised-models.svg";
-import accurateAnnotation from "/images/Accurate-annotation.svg";
-import secure from "/images/secure.svg";
-import continuous from "/images/continous.svg";
+import personalisedModels from "/public/images/Personalised-models.svg";
+import accurateAnnotation from "/public/images/Accurate-annotation.svg";
+import secure from "/public/images/secure.svg";
+import continuous from "/public/images/continous.svg";
 
 export const WhyChooseUs = (): JSX.Element => {
   const featureCards = [
