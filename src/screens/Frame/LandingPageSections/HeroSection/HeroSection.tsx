@@ -1,7 +1,7 @@
 import React from "react";
 import { Badge } from "../../../../components/ui/badge";
 import heroImage from "/images/hero-section-bg-img.png";
-import { Header } from "../../components/header";
+import { Header } from "../../commonComponents/Header/header";
 import { Button } from "../../../../components/ui/button";
 import { Link } from "react-router-dom";
 

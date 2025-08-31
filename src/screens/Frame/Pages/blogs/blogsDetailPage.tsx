@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Card, CardContent } from "../../../../components/ui/card";
-import { HomePageBlogsSection } from "../../sections/HomePageBlogsSection";
-import { Header } from "../../components/header";
-import { HomeCTASection } from "../../sections/HomeCTASection";
-import { Footer } from "../../sections/Footer";
+import { HomePageBlogsSection } from "../../LandingPageSections/HomePageBlogsSection";
+import { Header } from "../../commonComponents/Header/header";
+import { HomeCTASection } from "../../commonComponents/HomeCTASection";
+import { Footer } from "../../commonComponents/Footer";
 import { allBlogPosts } from "./blogsData";
 import { useParams } from "react-router-dom";
 import {

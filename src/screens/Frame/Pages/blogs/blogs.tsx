@@ -2,9 +2,9 @@ import React, { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Card, CardContent } from "../../../../components/ui/card";
 import { Button } from "../../../../components/ui/button";
-import { HomeCTASection } from "../../sections/HomeCTASection";
-import { Footer } from "../../sections/Footer";
-import { Header } from "../../components/header";
+import { HomeCTASection } from "../../commonComponents/HomeCTASection";
+import { Footer } from "../../commonComponents/Footer";
+import { Header } from "../../commonComponents/Header/header";
 import { Badge } from "../../../../components/ui/badge";
 import { Link } from "react-router-dom";
 import { allBlogPosts } from "../blogs/blogsData"; // adjust path
