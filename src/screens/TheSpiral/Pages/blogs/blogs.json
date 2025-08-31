@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "image": "/public/images/blog-1.svg",
+    "image": "/images/blog-1.svg",
     "category": "TECHNOLOGY",
     "date": "November 22, 2021",
     "title": "Growth Hacking Tips for Startups",
@@ -24,7 +24,7 @@
   },
   {
     "id": 2,
-    "image": "/public/images/blog-1.svg",
+    "image": "/images/blog-1.svg",
     "category": "TECHNOLOGY",
     "date": "November 23, 2021",
     "title": "Product Development and Sales",
@@ -56,7 +56,7 @@
   },
   {
     "id": 3,
-    "image": "/public/images/blog-1.svg",
+    "image": "/images/blog-1.svg",
     "category": "FINANCE",
     "date": "November 24, 2021",
     "title": "Understanding Market Volatility",
