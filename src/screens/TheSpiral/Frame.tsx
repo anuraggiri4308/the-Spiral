@@ -7,8 +7,8 @@ import { WhyChooseUs } from "./LandingPageSections/WhyChooseUsSection";
 import { HomePageBlogsSection } from "./LandingPageSections/HomePageBlogsSection";
 import { ExpertiseSection } from "./LandingPageSections/ExpertiseSection";
 import { Footer } from "./commonComponents/Footer";
-import Blogs from "../../screens/Frame/Pages/blogs/blogs";
-import BlogsDetailPage from "../../screens/Frame/Pages/blogs/blogsDetailPage";
+import Blogs from "./Pages/blogs/blogs";
+import BlogsDetailPage from "./Pages/blogs/blogsDetailPage";
 import { Route, Routes } from "react-router-dom";
 
 export const Frame = (): JSX.Element => {
