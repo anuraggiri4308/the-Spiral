@@ -1,76 +1,62 @@
 import React from "react";
 import { Badge } from "../../../../components/ui/badge";
-import heroImage from "/images/hero-section-bg-img.png";
 import { Header } from "../../commonComponents/Header/header";
 import { Button } from "../../../../components/ui/button";
 import { Link } from "react-router-dom";
+import heroBgImg from "/public/images/abc2.png";
 
 export const HeroSection = (): JSX.Element => {
   return (
-    <section className="relative w-full min-h-[740px] bg-[#00030c]">
-      <div className="relative h-full">
-        {/* ✅ Header separated */}
-        <Header />
+    <section
+      className="relative w-full bg-cover bg-center md:bg-top"
+      style={{ backgroundImage: `url(${heroBgImg})` }}
+    >
+      {/* ✅ Header */}
+      <Header />
 
-        {/* Background Image - hidden on mobile */}
-        <img
-          className="absolute top-[95px] left-0 w-full h-[740px] object-cover hidden md:block"
-          alt="Background Image"
-          src={heroImage}
-        />
+      {/* Hero Content */}
+      <div className="flex flex-col items-center justify-center text-center px-4 py-10 md:py-16 min-h-[calc(100vh-80px)]">
+        <Badge className="px-4 py-2.5 rounded-full font-medium text-white text-base bg-transparent shadow-[0px_2px_12px_#07051880] backdrop-blur-[11.3px] before:content-[''] before:absolute before:inset-0 before:p-[0.94px] before:rounded-[100px] before:[background:linear-gradient(1deg,rgba(255,255,255,0.1)_0%,rgba(255,255,255,0)_38%)] before:[-webkit-mask:linear-gradient(#fff_0_0)_content-box,linear-gradient(#fff_0_0)] before:[-webkit-mask-composite:xor] before:[mask-composite:exclude] before:z-[1] before:pointer-events-none [background:radial-gradient(50%_50%_at_50%_0%,rgba(255,255,255,0.1)_0%,rgba(255,255,255,0)_100%),linear-gradient(180deg,rgba(255,255,255,0.1)_0%,rgba(255,255,255,0.08)_100%)]">
+          Fastest, Most Resilient AI Data Labelling & Training Partner
+        </Badge>
 
-        {/* Hero Content */}
-        <div
-          className="
-  flex flex-col items-center justify-center 
-  text-center px-4 py-16
-  md:inline-flex md:items-start md:text-left md:gap-6 
-  md:absolute md:top-[220px] md:left-[72px] md:right-auto md:px-0 md:py-0
-"
-        >
-          <Badge className="px-4 py-2.5 rounded-full font-medium text-white text-base bg-transparent shadow-[0px_2px_12px_#07051880] backdrop-blur-[11.3px] before:content-[''] before:absolute before:inset-0 before:p-[0.94px] before:rounded-[100px] before:[background:linear-gradient(1deg,rgba(255,255,255,0.1)_0%,rgba(255,255,255,0)_38%)] before:[-webkit-mask:linear-gradient(#fff_0_0)_content-box,linear-gradient(#fff_0_0)] before:[-webkit-mask-composite:xor] before:[mask-composite:exclude] before:z-[1] before:pointer-events-none [background:radial-gradient(50%_50%_at_50%_0%,rgba(255,255,255,0.1)_0%,rgba(255,255,255,0)_100%),linear-gradient(180deg,rgba(255,255,255,0.1)_0%,rgba(255,255,255,0.08)_100%)]">
-            Fastest, Most Resilient AI Data Labelling & Training Partner
-          </Badge>
+        <h1 className="mt-6 font-bold text-white text-[40px] md:text-[64px] leading-[48px] md:leading-[88px] font-['Rethink_Sans',Helvetica] w-full">
+          Evolving Intelligence :&nbsp;
+          <span className="bg-gradient-to-r from-[#35E0ED] to-[#0074E5] bg-clip-text text-transparent">
+            Inspired by DNA
+          </span>
+        </h1>
 
-          <h1 className="mt-6 font-bold text-white text-[28px] md:text-[48px] leading-[40px] md:leading-[80px] font-['Rethink_Sans',Helvetica] max-w-[800px]">
-            Evolving Intelligence
-            <br />
-            <span className="bg-gradient-to-r from-[#35E0ED] to-[#0074E5] bg-clip-text text-transparent">
-              — Inspired by DNA
+        {/* Description + CTA */}
+        <div className="mt-6 flex flex-col items-center gap-8 max-w-[900px]">
+          <div className="text-lg md:text-xl font-medium text-[#adb2b9] tracking-[-0.08px] leading-7">
+            Transform raw data into evolving artificial intelligence with our
+            organic approach to machine learning. Just like DNA adapts and
+            evolves,{" "}
+            <span className="text-white">
+              your AI grows smarter with every interaction.
             </span>
-          </h1>
-
-          {/* Description + CTA */}
-          <div className="mt-6 flex flex-col items-center md:items-start gap-8">
-            <div className="max-w-[600px] text-lg md:text-xl font-medium text-[#adb2b9] tracking-[-0.08px] leading-7">
-              Transform raw data into evolving artificial intelligence with our
-              organic approach to machine learning. Just like DNA adapts and
-              evolves,{" "}
-              <span className="text-white">
-                your AI grows smarter with every interaction.
-              </span>
-            </div>
-            <Link to="/book-demo">
-              <Button
-                variant="ghost"
-                className="w-[190px] flex items-center justify-center gap-2 px-4 py-6 rounded-full border border-white font-medium text-white text-base tracking-[-0.54px] leading-6 hover:bg-white hover:opacity-90 transition-all duration-300"
-              >
-                Book a Demo
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="w-5 h-5 ml-1 transition-transform group-hover:translate-x-1"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-              </Button>
-            </Link>
           </div>
+          <Link to="/book-demo">
+            <Button
+              variant="ghost"
+              className="w-[190px] flex items-center justify-center gap-2 px-4 py-6 rounded-full border border-white font-medium text-white text-base tracking-[-0.54px] leading-6 hover:bg-white hover:opacity-90 transition-all duration-300"
+            >
+              Book a Demo
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="w-5 h-5 ml-1 transition-transform group-hover:translate-x-1"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                  clipRule="evenodd"
+                />
+              </svg>
+            </Button>
+          </Link>
         </div>
       </div>
     </section>
