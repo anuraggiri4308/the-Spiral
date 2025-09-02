@@ -38,7 +38,6 @@ export const HeroSection = (): JSX.Element => {
               speed={50}
               repeat={Infinity}
               cursor={true}
-              className="[&_.type-cursor]:text-[#35E0ED] [&_.type-cursor]:font-bold [&_.type-cursor]:after:content-['_']"
             />
           </span>
         </h1>
