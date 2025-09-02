@@ -3,6 +3,7 @@ import { Badge } from "../../../../components/ui/badge";
 import { Header } from "../../commonComponents/Header/header";
 import { Button } from "../../../../components/ui/button";
 import { Link } from "react-router-dom";
+import { TypeAnimation } from "react-type-animation"; // ✅ typing effect
 import heroBgImg from "/public/images/hero-section-bg-img.png";
 
 export const HeroSection = (): JSX.Element => {
@@ -12,21 +13,33 @@ export const HeroSection = (): JSX.Element => {
       style={{ backgroundImage: `url(${heroBgImg})` }}
     >
       {/* ✅ Header */}
-      <Header />
+      <Header backgroundClass="bg-transparent absolute top-0 left-0 w-full" />
 
       {/* Hero Content */}
-      <div
-        className="flex flex-col items-center justify-center text-center px-4 py-10 md:py-16 min-h-[70vh] md:min-h-[calc(100vh-80px)]
-"
-      >
+      <div className="flex flex-col items-center justify-center text-center px-4 py-10 md:py-16 min-h-[80vh] md:min-h-[calc(100vh-80px)]">
         <Badge className="px-4 py-2.5 rounded-full font-medium text-white text-base bg-transparent shadow-[0px_2px_12px_#07051880] backdrop-blur-[11.3px] before:content-[''] before:absolute before:inset-0 before:p-[0.94px] before:rounded-[100px] before:[background:linear-gradient(1deg,rgba(255,255,255,0.1)_0%,rgba(255,255,255,0)_38%)] before:[-webkit-mask:linear-gradient(#fff_0_0)_content-box,linear-gradient(#fff_0_0)] before:[-webkit-mask-composite:xor] before:[mask-composite:exclude] before:z-[1] before:pointer-events-none [background:radial-gradient(50%_50%_at_50%_0%,rgba(255,255,255,0.1)_0%,rgba(255,255,255,0)_100%),linear-gradient(180deg,rgba(255,255,255,0.1)_0%,rgba(255,255,255,0.08)_100%)]">
           Fastest, Most Resilient AI Data Labelling & Training Partner
         </Badge>
 
-        <h1 className="mt-6 font-bold text-white text-[40px] md:text-[64px] leading-[48px] md:leading-[88px] font-['Rethink_Sans',Helvetica] w-full">
-          Evolving Intelligence:&nbsp;
+        <h1 className="mt-6 font-bold text-white text-[32px] md:text-[64px] leading-[48px] md:leading-[88px] font-['Rethink_Sans',Helvetica] w-full">
+          Evolving Intelligence with our
+          <br />
           <span className="bg-gradient-to-r from-[#35E0ED] to-[#0074E5] bg-clip-text text-transparent">
-            Inspired by DNA
+            <TypeAnimation
+              sequence={[
+                "Inspired by DNA",
+                2000,
+                "Data labeling experts",
+                2000,
+                "Human in the loop",
+                2000,
+              ]}
+              wrapper="span"
+              speed={50}
+              repeat={Infinity}
+              cursor={true}
+              className="[&_.type-cursor]:text-[#35E0ED] [&_.type-cursor]:font-bold [&_.type-cursor]:after:content-['|']"
+            />
           </span>
         </h1>
 

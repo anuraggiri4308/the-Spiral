@@ -40,7 +40,8 @@ export const FounderSection = (): JSX.Element => {
 
   return (
     <section className="relative w-full py-16 md:py-16 bg-[#00020f]">
-      <div className="flex flex-col items-center gap-6 mx-auto max-w-[828px] px-4">
+      {/* Top section */}
+      <div className="flex flex-col items-center gap-6 mx-auto max-w-[828px] px-6 sm:px-8 lg:px-0">
         <Badge className="px-4 py-2.5 rounded-full font-medium text-white text-base bg-transparent shadow-[0px_2px_12px_#07051880] backdrop-blur-[11.3px] before:content-[''] before:absolute before:inset-0 before:p-[0.94px] before:rounded-[100px] before:[background:linear-gradient(1deg,rgba(255,255,255,0.1)_0%,rgba(255,255,255,0)_38%)] before:[-webkit-mask:linear-gradient(#fff_0_0)_content-box,linear-gradient(#fff_0_0)] before:[-webkit-mask-composite:xor] before:[mask-composite:exclude] before:z-[1] before:pointer-events-none [background:radial-gradient(50%_50%_at_50%_0%,rgba(255,255,255,0.1)_0%,rgba(255,255,255,0)_100%),linear-gradient(180deg,rgba(255,255,255,0.1)_0%,rgba(255,255,255,0.08)_100%)]">
           Visionaries Leading AI’s Next Evolution
         </Badge>
@@ -59,14 +60,15 @@ export const FounderSection = (): JSX.Element => {
         </p>
       </div>
 
-      <div className="relative mx-auto mt-16 max-w-[1030px] px-4">
+      {/* Cards */}
+      <div className="relative mx-auto mt-16 max-w-[1030px] px-6 sm:px-8 lg:px-0">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-14">
           {teamMembers.map((member, index) => (
             <div
               key={member.id}
               className={`flex flex-col group transform transition-transform duration-300 ${
-                index % 2 === 0 ? "-translate-y-6" : "translate-y-6"
-              }`}
+                index % 2 === 0 ? "lg:-translate-y-6" : "lg:translate-y-6"
+              } h-[369px]`}
             >
               {/* Image */}
               <div className="h-[282px] w-full overflow-hidden rounded-t-xl">
@@ -78,19 +80,16 @@ export const FounderSection = (): JSX.Element => {
               </div>
 
               {/* Card body */}
-              <Card className="rounded-none border-0 overflow-hidden text-center">
+              <Card className="flex-1 rounded-none border-0 overflow-hidden text-center">
                 <CardContent className="p-0">
                   <div className="h-[56px] flex flex-col justify-center items-center bg-[linear-gradient(0deg,rgba(0,0,0,1)_0%,rgba(52,55,71,1)_100%)] p-4">
                     <div className="[font-family:'Rethink_Sans',Helvetica] font-small text-white text-lg mb-1.5 leading-[26px]">
                       {member.name}
                     </div>
-                    {/* <div className="[font-family:'Rethink_Sans',Helvetica] font-medium text-[#adb2b9] text-sm leading-3 opacity-70">
-                      {member.position}
-                    </div> */}
                   </div>
                 </CardContent>
 
-                {/* Footer - Hidden until hover */}
+                {/* Footer */}
                 <CardFooter className="p-0 h-[31px] overflow-hidden rounded-b-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <a
                     href={member.linkedin}

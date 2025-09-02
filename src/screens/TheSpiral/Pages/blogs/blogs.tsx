@@ -38,7 +38,7 @@ export const Blogs = (): JSX.Element => {
 
   return (
     <>
-      <Header />
+      <Header backgroundClass="bg-[#00030c]" />
       <section className="w-full bg-[#00030c] text-white">
         <main
           className="flex flex-col w-full max-w-[1200px] mx-auto items-center gap-12 sm:gap-16 lg:gap-20 

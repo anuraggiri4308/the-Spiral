@@ -8,8 +8,13 @@ import {
   NavigationMenuList,
 } from "@radix-ui/react-navigation-menu";
 import { Button } from "../../../../components/ui/button";
+import heroBgImg from "/public/images/hero-section-bg-img.png";
 
-export const Header = (): JSX.Element => {
+export const Header = ({
+  backgroundClass = "bg-[#00030f]",
+}: {
+  backgroundClass?: string;
+}) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
   const [activeIndex, setActiveIndex] = React.useState<number | null>(null);
 
@@ -41,7 +46,9 @@ export const Header = (): JSX.Element => {
   }, [location]);
 
   return (
-    <header className="flex w-full h-24 items-center justify-between px-4 md:px-[72px] py-4 bg-[#00030f]/10 relative z-50 border-b border-white/10">
+    <header
+      className={`flex w-full h-24 items-center justify-between px-4 md:px-[72px] py-4 relative z-50 border-b border-white/10 ${backgroundClass}`}
+    >
       <div className="flex items-center justify-between flex-1 self-stretch">
         {/* ✅ Logo */}
         <div className="flex items-center gap-2">
@@ -120,7 +127,10 @@ export const Header = (): JSX.Element => {
       {/* ✅ Mobile Menu */}
       {/* ✅ Mobile Menu (below header) */}
       {isMobileMenuOpen && (
-        <div className="fixed top-24 left-0 right-0 bottom-0 bg-[#00030f] z-40 lg:hidden flex flex-col">
+        <div
+          className="fixed top-24 left-0 right-0 bottom-0 z-40 lg:hidden flex flex-col
+               bg-[#00030f]/70 backdrop-blur-md"
+        >
           <div className="flex flex-col p-6 space-y-4 overflow-y-auto">
             {navItems.map((item, index) => (
               <Link

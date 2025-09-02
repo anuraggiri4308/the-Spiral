@@ -58,7 +58,7 @@ export const WhyChooseUs = (): JSX.Element => {
       `}</style>
 
       {/* Header Section */}
-      <div className="flex flex-col items-center justify-center gap-6 mb-16">
+      <div className="flex flex-col items-center justify-center gap-6 mb-16 px-4 md:px-8 lg:px-0">
         <Badge className="px-4 py-2.5 rounded-full font-medium text-white text-base bg-transparent shadow-[0px_2px_12px_#07051880] backdrop-blur-[11.3px] before:content-[''] before:absolute before:inset-0 before:p-[0.94px] before:rounded-[100px] before:[background:linear-gradient(1deg,rgba(255,255,255,0.1)_0%,rgba(255,255,255,0)_38%)] before:[-webkit-mask:linear-gradient(#fff_0_0)_content-box,linear-gradient(#fff_0_0)] before:[-webkit-mask-composite:xor] before:[mask-composite:exclude] before:z-[1] before:pointer-events-none [background:radial-gradient(50%_50%_at_50%_0%,rgba(255,255,255,0.1)_0%,rgba(255,255,255,0)_100%),linear-gradient(180deg,rgba(255,255,255,0.1)_0%,rgba(255,255,255,0.08)_100%)]">
           Built for Accuracy, Designed to Adapt
         </Badge>
@@ -85,11 +85,22 @@ export const WhyChooseUs = (): JSX.Element => {
       </div>
 
       {/* Cards */}
-      <div className="flex flex-wrap justify-center items-stretch gap-6 px-4 md:px-8 lg:px-32">
+      {/* Cards */}
+      <div
+        className="
+    flex flex-wrap justify-center items-stretch gap-6
+    px-4 sm:px-8 md:px-12 lg:px-32
+  "
+      >
         {featureCards.map((card, index) => (
           <Card
             key={index}
-            className="spiral-card-group relative w-[278px] rounded-2xl p-[1px] bg-transparent border-none overflow-visible flex flex-col"
+            className="
+        spiral-card-group relative 
+        w-[280px] h-[420px] sm:w-[300px] sm:h-[420px] 
+        md:w-[320px] md:h-[420px] lg:w-[278px] lg:h-[420px]
+        rounded-2xl p-[1px] bg-transparent border-none overflow-visible flex flex-col
+      "
           >
             {/* Gradient Border Layer */}
             <div
@@ -107,12 +118,12 @@ export const WhyChooseUs = (): JSX.Element => {
                 alt={`${card.title} illustration`}
                 src={card.image}
               />
-              <CardContent className="flex flex-col items-center justify-between flex-1 px-3 py-6 rounded-b-[15px]">
+              <CardContent className="flex flex-col items-center justify-between flex-1 px-4 py-6 rounded-b-[15px]">
                 <div>
                   <h3 className="font-bold text-absolutewhite text-xl text-center leading-[30px] font-['Rethink_Sans',Helvetica]">
                     {card.title}
                   </h3>
-                  <p className="text-[#adb2b9] text-base text-center leading-6 font-['Rethink_Sans',Helvetica] min-h-[48px]">
+                  <p className="text-[#adb2b9] text-base text-center leading-6 font-['Rethink_Sans',Helvetica] min-h-[72px]">
                     {card.description}
                   </p>
                 </div>
