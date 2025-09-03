@@ -10,6 +10,7 @@ import { Footer } from "./commonComponents/Footer";
 import Blogs from "./Pages/blogs/blogs";
 import BlogsDetailPage from "./Pages/blogs/blogsDetailPage";
 import { Route, Routes } from "react-router-dom";
+import { BookDemo } from "./Pages/bookDemo/BookDemo";
 
 export const Frame = (): JSX.Element => {
   return (
@@ -36,6 +37,15 @@ export const Frame = (): JSX.Element => {
           <Route path="/blogs" element={<Blogs />} />
           <Route path="/blogs/:slug" element={<BlogsDetailPage />} />
           {/* (Optional) Direct detail page route */}
+          <Route
+            path="/bookDemo"
+            element={
+              <>
+                <BookDemo />
+                <Footer />
+              </>
+            }
+          />
         </Routes>
       </CardContent>
     </Card>

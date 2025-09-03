@@ -101,7 +101,7 @@ export const Header = ({
 
         {/* CTA Button (Desktop only) */}
         <div className="hidden lg:flex items-start justify-end">
-          <Link to="/book-demo">
+          <Link to="/bookDemo">
             <Button
               variant="secondary"
               className="group w-[170px] flex items-center justify-center gap-2 px-4 py-5 rounded-full border border-white font-medium text-base tracking-[-0.54px] leading-6 hover:bg-white hover:opacity-90 transition-all duration-300"
@@ -148,7 +148,7 @@ export const Header = ({
               </Link>
             ))}
 
-            <Link to="/book-demo">
+            <Link to="/bookDemo">
               <Button
                 variant="secondary"
                 className="mt-6 w-full flex items-center justify-center gap-1 px-4 py-4 rounded-[32px] [font-family:'Rethink_Sans',Helvetica] font-medium text-lg"
