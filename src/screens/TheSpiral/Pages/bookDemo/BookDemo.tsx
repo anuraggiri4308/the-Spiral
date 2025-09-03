@@ -418,7 +418,10 @@ export const BookDemo = (): JSX.Element => {
         <DialogContent>
           <DialogHeader className="flex flex-col gap-3">
             <DialogTitle>
-              🎉 Thank you, {formData.name || "Friend"}!
+              Cheers,{" "}
+              <span className="bg-gradient-to-r from-[#35E0ED] to-[#0074E5] bg-clip-text text-transparent font-semibold">
+                {formData.name || "Friend"}!
+              </span>
             </DialogTitle>
             <DialogDescription>
               Your request has been submitted successfully. We’ll contact you
@@ -429,7 +432,7 @@ export const BookDemo = (): JSX.Element => {
           <DialogFooter>
             <div className="flex flex-col items-center gap-4 mt-6">
               <a
-                href="https://yourproduct.com" // replace with your product link
+                href="https://www.linkedin.com/in/anurag-giri-ab2a00148/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-6 py-2  bg-white rounded-[32px] hover:opacity-80 font-medium shadow-md text-black transition-all duration-200"
