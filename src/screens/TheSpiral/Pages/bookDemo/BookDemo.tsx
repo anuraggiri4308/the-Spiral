@@ -13,6 +13,14 @@ import { Button } from "../../../../components/ui/button";
 import { Separator } from "../../../../components/ui/separator";
 import { Header } from "../../commonComponents/Header/header";
 import heroBgImg from "/public/images/bookDemoBg3.png";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+  DialogFooter,
+} from "../../../../components/ui/dialog";
 
 export const BookDemo = (): JSX.Element => {
   const [selectedBudget, setSelectedBudget] = useState("");
@@ -27,6 +35,7 @@ export const BookDemo = (): JSX.Element => {
   });
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [showErrors, setShowErrors] = useState(false);
+  const [open, setOpen] = useState(false);
 
   const features = [
     "Cut labeling time without cutting accuracy",
@@ -112,12 +121,12 @@ export const BookDemo = (): JSX.Element => {
     setShowErrors(true);
 
     if (Object.keys(newErrors).length === 0) {
-      // Form is valid, handle submission
       console.log("Form submitted successfully", {
         formData,
         selectedBudget,
         selectedServices,
       });
+      setOpen(true); // ✅ open success dialog
     }
   };
 
@@ -405,6 +414,36 @@ export const BookDemo = (): JSX.Element => {
           </CardContent>
         </Card>
       </section>
+      <Dialog open={open} onOpenChange={setOpen}>
+        <DialogContent>
+          <DialogHeader className="flex flex-col gap-3">
+            <DialogTitle>
+              🎉 Thank you, {formData.name || "Friend"}!
+            </DialogTitle>
+            <DialogDescription>
+              Your request has been submitted successfully. We’ll contact you
+              shortly. Try the live demo in the meantime.
+            </DialogDescription>
+          </DialogHeader>
+
+          <DialogFooter>
+            <div className="flex flex-col items-center gap-4 mt-6">
+              <a
+                href="https://yourproduct.com" // replace with your product link
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-6 py-2  bg-white rounded-[32px] hover:opacity-80 font-medium shadow-md text-black transition-all duration-200"
+              >
+                Live Demo
+              </a>
+            </div>
+
+            {/* <Button onClick={() => setOpen(false)} className="mt-4">
+              See Live Demo!
+            </Button> */}
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
     </>
   );
 };
