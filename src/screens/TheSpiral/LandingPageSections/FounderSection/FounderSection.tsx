@@ -17,10 +17,10 @@ export const FounderSection = (): JSX.Element => {
     },
     {
       id: 2,
-      name: "Anurag Giri",
+      name: "John Doe",
       position: "Co-Founder & COO",
-      image: anuragImage,
-      linkedin: "https://www.linkedin.com/in/anurag-giri-ab2a00148/",
+      image: rajnishImage,
+      linkedin: "#",
     },
     {
       id: 3,
