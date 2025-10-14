@@ -21,6 +21,7 @@ import {
   DialogDescription,
   DialogFooter,
 } from "../../../../components/ui/dialog";
+import dbsLogo from "/images/dbsLogo.svg";
 
 export const BookDemo = (): JSX.Element => {
   const [selectedBudget, setSelectedBudget] = useState("");
@@ -149,7 +150,7 @@ export const BookDemo = (): JSX.Element => {
             </p>
           </div>
           <div className="flex flex-col items-start gap-14 w-full">
-            <div className="flex flex-col items-start gap-6 w-full">
+            <div className="flex flex-col items-start gap-6 w-full mt-6">
               {features.map((feature, index) => (
                 <div key={index} className="flex items-center gap-3 w-full">
                   <CheckIcon className="w-7 h-7 text-white" />
@@ -159,42 +160,56 @@ export const BookDemo = (): JSX.Element => {
                 </div>
               ))}
             </div>
-            <Card className="w-full max-w-[469px] h-[238.25px] bg-[url(/bg.png)] bg-[100%_100%] border-0">
-              <CardContent className="relative w-[411px] h-[178px] top-[30px] left-[30px] p-0">
-                <img
-                  className="w-[101px] h-[15px] mb-[35px]"
-                  alt="Review"
-                  src="/review.png"
-                />
-                <blockquote className="w-[409px] font-regular-16px font-[number:var(--regular-16px-font-weight)] text-white text-[length:var(--regular-16px-font-size)] tracking-[var(--regular-16px-letter-spacing)] leading-[var(--regular-16px-line-height)] [font-style:var(--regular-16px-font-style)] mb-[35px]">
-                  &#34;We love Landingfolio! Our designers were using it for
-                  their projects, so we already knew what kind of design they
-                  want.&#34;
+            {/* ⭐ Testimonial Card Section */}
+            <Card className="w-full max-w-[469px] rounded-2xl bg-[#0D1117] border border-[#1E2633] shadow-[0px_4px_12px_rgba(0,0,0,0.2)] p-6 mt-8">
+              <CardContent className="flex flex-col gap-4 p-0">
+                {/* Quote Text */}
+                <blockquote className="text-[#E6E8EB] text-lg leading-7 italic">
+                  “Anurag please add a relatable quote related to what our
+                  expertise or niche is and below add the person name and their
+                  role”
                 </blockquote>
-                <div className="flex items-center gap-[15px]">
-                  <img
-                    className="w-[45px] h-[45px] rounded-[158.47px] object-cover"
-                    alt="Devon Lane"
-                    src="/bg-1.png"
-                  />
-                  <div className="flex flex-col">
-                    <div className="font-bold-13px font-[number:var(--bold-13px-font-weight)] text-white text-[length:var(--bold-13px-font-size)] tracking-[var(--bold-13px-letter-spacing)] leading-[var(--bold-13px-line-height)] [font-style:var(--bold-13px-font-style)]">
-                      Devon Lane
-                    </div>
-                    <div className="font-regular-13px font-[number:var(--regular-13px-font-weight)] text-[#797e85] text-[length:var(--regular-13px-font-size)] tracking-[var(--regular-13px-letter-spacing)] leading-[var(--regular-13px-line-height)] [font-style:var(--regular-13px-font-style)]">
-                      DLDesign.co
-                    </div>
-                  </div>
+
+                {/* Divider line */}
+                <div className="h-[1px] bg-gradient-to-r from-[#2A2F3C] to-transparent my-2" />
+
+                {/* Author Info */}
+                <div className="flex flex-col">
+                  <span className="text-white font-semibold text-base">
+                    Nat Friedman
+                  </span>
+                  <span className="text-[#9BA3B4] text-sm">DLDesign.co</span>
                 </div>
               </CardContent>
             </Card>
+
+            {/* Trusted by Section */}
+            <div className="flex flex-col items-start gap-4 mt-10">
+              {/* Heading */}
+              <h3 className="text-[#ADB2B9] text-sm font-semibold tracking-wide uppercase">
+                Trusted by the world’s most ambitious AI teams
+              </h3>
+
+              {/* Divider Line */}
+              <div className="w-full h-[1px] bg-[#2A2F3C]" />
+
+              {/* Logos Row */}
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-10 gap-y-6 mt-4 opacity-80">
+                <img src={dbsLogo} alt="Carsome" className="h-6" />
+                <img src={dbsLogo} alt="Allbirds" className="h-6" />
+                <img src={dbsLogo} alt="Betabrand" className="h-6" />
+                <img src={dbsLogo} alt="SmartAsset" className="h-6" />
+                <img src={dbsLogo} alt="HelloFresh" className="h-6" />
+                <img src={dbsLogo} alt="DBS" className="h-6" />
+              </div>
+            </div>
           </div>
         </div>
         <Card
           className="flex-shrink-0 w-full lg:w-[507px] bg-[#0f1426] rounded-[20px] 
              shadow-[0px_10px_15px_#00000008,0px_3px_11px_#0000000f] border-0 
              order-1 lg:order-2 
-             mx-auto lg:ml-auto" // 👉 centers on mobile/tablet, pushes right on desktop
+             mx-auto lg:ml-auto"
         >
           <CardContent className="p-6 sm:p-8 lg:p-10">
             <div className="flex flex-col w-full  items-start gap-8">
@@ -343,7 +358,15 @@ export const BookDemo = (): JSX.Element => {
                         <RadioGroupItem
                           value={option.id}
                           id={option.id}
-                          className="w-4 h-4 border-[1.6px] border-[#797e85] text-white"
+                          className="
+    w-4 h-4 border-[1.6px] border-[#797e85] rounded-full
+    data-[state=checked]:border-white
+    data-[state=checked]:bg-white
+    data-[state=checked]:ring-1
+    data-[state=checked]:ring-offset-1
+    data-[state=checked]:ring-[#4F39F6]
+    transition-all
+  "
                         />
                         <Label
                           htmlFor={option.id}
