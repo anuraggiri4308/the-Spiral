@@ -56,7 +56,7 @@ export const Header = ({
             to="/"
             className="text-white text-[22px] leading-[24px] tracking-[0.02em] font-semibold font-['Raleway',Helvetica]"
           >
-            The Spiral
+            Spiral
           </Link>
         </div>
 

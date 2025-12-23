@@ -145,8 +145,8 @@ export const BookDemo = (): JSX.Element => {
               Let&apos;s Evolve Your AI Together?
             </h1>
             <p className="w-full [font-family:'Rethink_Sans',Helvetica] font-normal text-[#adb2b9] text-xl tracking-[0] leading-7">
-              The Spiral empowers teams to accelerate model training with
-              smarter data. Get a hands-on demo and see how we:
+              Spiral empowers teams to accelerate model training with smarter
+              data. Get a hands-on demo and see how we:
             </p>
           </div>
           <div className="flex flex-col items-start gap-14 w-full">

@@ -49,14 +49,14 @@ export const FounderSection = (): JSX.Element => {
         <h1 className="font-bold text-white text-[28px] md:text-[48px] leading-[36px] md:leading-[60px] [font-family:'Rethink_Sans',Helvetica] max-w-[800px] text-center">
           <span className="mr-1">The Minds Behind </span>
           <span className="bg-gradient-to-r from-[#35E0ED] to-[#0074E5] bg-clip-text text-transparent">
-            The Spiral
+            Spiral
           </span>
         </h1>
 
         <p className="text-center [font-family:'Rethink_Sans',Helvetica] font-medium text-lg md:text-xl tracking-[-0.40px] leading-7 text-[#adb2b9] max-w-2xl">
           Discover the creative minds shaping{" "}
-          <span className="text-white">the Spiral’s</span> innovative solutions
-          and guiding its strategic vision to new heights.
+          <span className="text-white">Spiral’s</span> innovative solutions and
+          guiding its strategic vision to new heights.
         </p>
       </div>
 

@@ -26,10 +26,14 @@ export const Footer = (): JSX.Element => {
     "Our Products",
     "Contact Us",
   ];
-
+  const currentYear = new Date().getFullYear();
   const socialLinks: { icon: IconType; href: string; hoverColor: string }[] = [
-    { icon: FaLinkedinIn, href: "https://linkedin.com", hoverColor: "#0077B5" },
-    { icon: FaFacebookF, href: "https://facebook.com", hoverColor: "#1877F2" },
+    {
+      icon: FaLinkedinIn,
+      href: "https://www.linkedin.com/company/thespiral-ai/",
+      hoverColor: "#0077B5",
+    },
+    //{ icon: FaFacebookF, href: "https://facebook.com", hoverColor: "#1877F2" },
     // { icon: FaInstagram, href: "https://instagram.com", hoverColor: "#E4405F" },
     { icon: FaTwitter, href: "https://twitter.com", hoverColor: "#1DA1F2" },
   ];
@@ -40,13 +44,12 @@ export const Footer = (): JSX.Element => {
         {/* Column 1 - Logo + Info */}
         <div className="flex flex-col items-center justify-center gap-6 text-center order-4 md:order-4 lg:order-1">
           <div className="text-white text-[22px] leading-[24px] tracking-[0.02em] font-semibold font-['Raleway',Helvetica]">
-            The Spiral
+            Spiral
           </div>
           <Separator className="w-full max-w-[321px] bg-[#adb2b9]/20 h-px" />
           <div className="[font-family:'Rethink_Sans',Helvetica] font-normal text-[#adb2b9] text-sm leading-[22px]">
-            © 2025 Copyright The Spiral AI • All rights reserved
-            <br />
-            Company No. 12013830 • VAT no. 336780970
+            Copyright © {currentYear} Spiral Innovations. <br />
+            All rights reserved
           </div>
         </div>
 
@@ -83,7 +86,7 @@ export const Footer = (): JSX.Element => {
               href="mailto:hr@thespiral.ai"
               className="[font-family:'Rethink_Sans',Helvetica] text-[#adb2b9] font-normal text-[#2d67ff] text-base leading-8 underline"
             >
-              info@thespiral.ai
+              hr@thespiral.ai
             </a>
             <a
               href="tel:+91-9783808306"

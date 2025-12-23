@@ -51,7 +51,7 @@ export const Blogs = (): JSX.Element => {
               Discover What Everyone's Missing
             </Badge>
             <h1 className="font-bold text-white text-[28px] md:text-[48px] leading-[36px] md:leading-[60px] [font-family:'Rethink_Sans',Helvetica] max-w-[800px] text-center">
-              <span className="mr-1">The Spiral </span>
+              <span className="mr-1">Spiral </span>
               <span className="bg-gradient-to-r from-[#35E0ED] to-[#0074E5] bg-clip-text text-transparent">
                 Blogs
               </span>
