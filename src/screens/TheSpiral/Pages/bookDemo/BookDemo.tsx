@@ -500,7 +500,7 @@ export const BookDemo = (): JSX.Element => {
           <DialogFooter>
             <div className="flex flex-col items-center gap-4 mt-6">
               <a
-                href="https://www.linkedin.com/in/anurag-giri-ab2a00148/"
+                href="https://datalabeler.netlify.app/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-6 py-2  bg-white rounded-[32px] hover:opacity-80 font-medium shadow-md text-black transition-all duration-200"

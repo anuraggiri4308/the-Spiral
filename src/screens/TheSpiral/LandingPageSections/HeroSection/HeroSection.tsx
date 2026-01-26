@@ -4,14 +4,20 @@ import { Header } from "../../commonComponents/Header/header";
 import { Button } from "../../../../components/ui/button";
 import { Link } from "react-router-dom";
 import { TypeAnimation } from "react-type-animation"; // ✅ typing effect
-import heroBgImg from "/public/images/hero-section-bg-img.png";
+// import heroBgImg from "/public/images/hero-section-bg-img.png";
 
 export const HeroSection = (): JSX.Element => {
   return (
-    <section
-      className="relative w-full bg-cover bg-center md:bg-top"
-      style={{ backgroundImage: `url(${heroBgImg})` }}
-    >
+    <section className="relative w-full overflow-hidden">
+      {/* Optimized Hero Background */}
+      <img
+        src="/images/hero-section-bg-img.webp"
+        alt="Hero background"
+        loading="eager" // hero = above the fold
+        decoding="async"
+        className="absolute inset-0 w-full h-full object-cover object-center md:object-top -z-10"
+      />
+
       {/* ✅ Header */}
       <Header backgroundClass="bg-transparent absolute top-0 left-0 w-full" />
 
