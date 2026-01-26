@@ -10,9 +10,10 @@ import {
 } from "../../../../components/ui/radio-group";
 import { Checkbox } from "../../../../components/ui/checkbox";
 import { Button } from "../../../../components/ui/button";
-import { Separator } from "../../../../components/ui/separator";
+// import { Separator } from "../../../../components/ui/separator";
 import { Header } from "../../commonComponents/Header/header";
-import heroBgImg from "/public/images/bookDemoBg3.png";
+// import Image from "next/image";
+// import heroBgImg from "/public/images/bookDemoBg3.webp";
 import {
   Dialog,
   DialogContent,
@@ -37,6 +38,8 @@ export const BookDemo = (): JSX.Element => {
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [showErrors, setShowErrors] = useState(false);
   const [open, setOpen] = useState(false);
+  const [privacyOpen, setPrivacyOpen] = useState(false);
+  const [otherText, setOtherText] = useState("");
 
   const features = [
     "Cut labeling time without cutting accuracy",
@@ -74,6 +77,11 @@ export const BookDemo = (): JSX.Element => {
       setSelectedServices([...selectedServices, serviceId]);
     } else {
       setSelectedServices(selectedServices.filter((id) => id !== serviceId));
+
+      // If "other" is unchecked, clear input
+      if (serviceId === "other") {
+        setOtherText("");
+      }
     }
   };
 
@@ -135,10 +143,16 @@ export const BookDemo = (): JSX.Element => {
     <>
       <Header />
 
-      <section
-        className="grid grid-cols-1 lg:grid-cols-2 w-full py-10 lg:py-16 gap-8 lg:gap-8 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${heroBgImg})` }}
-      >
+      <section className="relative grid grid-cols-1 lg:grid-cols-2 w-full py-10 lg:py-16 gap-8 lg:gap-8 overflow-hidden">
+        {/* Optimized Background Image */}
+        <img
+          src="/images/bookDemoBg3.webp"
+          alt="Background"
+          loading="eager" // above-the-fold
+          decoding="async"
+          className="absolute inset-0 w-full h-full object-cover object-center -z-10"
+        />
+
         <div className="fflex flex-col w-full lg:max-w-[661px] items-center gap-14 order-2 lg:order-1 py-6 ml-0 lg:ml-12">
           <div className="flex flex-col w-full max-w-[619px] items-start gap-8">
             <h1 className="w-full max-w-[540px] [font-family:'Rethink_Sans',Helvetica] font-semibold text-absolutewhite text-4xl md:text-4xl tracking-[0] leading-[57.6px]">
@@ -407,19 +421,50 @@ export const BookDemo = (): JSX.Element => {
                       </div>
                     ))}
                   </div>
+                  {selectedServices.includes("other") && (
+                    <div className="flex flex-col mt-2 w-full">
+                      <Input
+                        placeholder="Please specify..."
+                        value={otherText}
+                        onChange={(e) => setOtherText(e.target.value)}
+                        className="
+        w-full
+        bg-transparent 
+        border-0 
+        border-b 
+        rounded-none 
+        px-0 
+        py-2 
+        h-auto 
+        focus-visible:ring-0 
+        text-white 
+        placeholder:text-[#797e85] 
+        border-[#797e85] 
+        focus-visible:border-white
+      "
+                      />
+                    </div>
+                  )}
+
                   {showErrors && errors.services && (
                     <span className="text-red-500 text-sm [font-family:'Rethink_Sans',Helvetica]">
                       {errors.services}
                     </span>
                   )}
                 </div>
-                <Separator className="w-full h-px bg-[#797e85]" />
+                {/* <Separator className="w-full h-px bg-[#797e85]" /> */}
                 <p className="[font-family:'Rethink_Sans',Helvetica] font-normal text-[#c7c7c7] text-sm tracking-[0] leading-5">
                   <span className="[font-family:'Rethink_Sans',Helvetica] font-normal text-[#c7c7c7] text-sm tracking-[0] leading-5">
                     By submitting this form, your information will be processed
                     in accordance with our{" "}
                   </span>
-                  <span className="font-bold underline">Privacy Policy.</span>
+                  <button
+                    type="button"
+                    onClick={() => setPrivacyOpen(true)}
+                    className="font-bold underline hover:opacity-80"
+                  >
+                    Privacy Policy.
+                  </button>
                 </p>
                 <Button
                   type="submit"
@@ -467,6 +512,28 @@ export const BookDemo = (): JSX.Element => {
             {/* <Button onClick={() => setOpen(false)} className="mt-4">
               See Live Demo!
             </Button> */}
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
+
+      <Dialog open={privacyOpen} onOpenChange={setPrivacyOpen}>
+        <DialogContent className="max-w-lg">
+          <DialogHeader>
+            <DialogTitle>Privacy Policy</DialogTitle>
+            <DialogDescription className="text-sm leading-6 text-[#ccc]">
+              We collect your information only to respond to your inquiry and
+              provide relevant services. Your data will not be shared with third
+              parties without consent and will be stored securely in accordance
+              with data protection regulations.
+              <br />
+              <br />
+              By submitting this form, you agree to our terms of processing and
+              communication regarding your request.
+            </DialogDescription>
+          </DialogHeader>
+
+          <DialogFooter className="mt-4">
+            <Button onClick={() => setPrivacyOpen(false)}>Close</Button>
           </DialogFooter>
         </DialogContent>
       </Dialog>
