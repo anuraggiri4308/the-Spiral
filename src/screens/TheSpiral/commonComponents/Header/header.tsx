@@ -23,8 +23,9 @@ export const Header = ({
   const navItems = [
     { name: "Home", path: "/" },
     { name: "Why Us?", path: "/#why-us" },
-    { name: "How It Works?", path: "/#how-it-works" },
-    { name: "Services", path: "/#services" },
+    { name: "Products", path: "/#how-it-works" },
+    { name: "Our Experties", path: "/#services" },
+    { name: "Data Labeling", path: "/#services" },
     { name: "Our Team", path: "/#teams" },
     { name: "Blog", path: "/blogs" },
   ];
