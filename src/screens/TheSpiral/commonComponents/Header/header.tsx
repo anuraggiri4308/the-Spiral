@@ -25,7 +25,7 @@ export const Header = ({
     { name: "Why Us?", path: "/#why-us" },
     { name: "Products", path: "/#how-it-works" },
     { name: "Our Experties", path: "/#services" },
-    { name: "Data Labeling", path: "/#services" },
+    { name: "Data Labeling", path: "/#data-labeling" },
     { name: "Our Team", path: "/#teams" },
     { name: "Blog", path: "/blogs" },
   ];
@@ -107,7 +107,7 @@ export const Header = ({
               variant="secondary"
               className="group w-[170px] flex items-center justify-center gap-2 px-4 py-5 rounded-full border border-white font-medium text-base tracking-[-0.54px] leading-6 hover:bg-white hover:opacity-90 transition-all duration-300"
             >
-              Book a Demo
+              Contact Us
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="w-5 h-5 ml-1 transition-transform group-hover:translate-x-1"
@@ -154,7 +154,7 @@ export const Header = ({
                 variant="secondary"
                 className="mt-6 w-full flex items-center justify-center gap-1 px-4 py-4 rounded-[32px] [font-family:'Rethink_Sans',Helvetica] font-medium text-lg"
               >
-                Book a Demo
+                Contact Us
               </Button>
             </Link>
           </div>
