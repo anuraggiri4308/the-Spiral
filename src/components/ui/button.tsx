@@ -11,19 +11,26 @@ const buttonVariants = cva(
       variant: {
         default:
           "bg-primary text-primary-foreground shadow hover:bg-primary/90",
+
         destructive:
           "bg-destructive text-destructive-foreground shadow-sm hover:bg-destructive/90",
+
         outline:
           "border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground",
+
         secondary:
           "bg-secondary text-black shadow-sm hover:bg-secondary/80 hover:shadow-md transition-shadow duration-300",
 
         ghost: "hover:bg-accent hover:text-accent-foreground",
+
         link: "text-primary underline-offset-4 hover:underline",
 
-        // ✅ New gradient CTA button style
         gradient:
-          "bg-gradient-to-r from-[#4f39f6] to-[#0092b8] text-white rounded-full text-lg font-medium  shadow-md hover:opacity-90 transition-all duration-300",
+          "bg-gradient-to-r from-[#4f39f6] to-[#0092b8] text-white rounded-full text-lg font-medium shadow-md hover:opacity-90 transition-all duration-300",
+
+        // ✅ NEW Plain Variant
+        plain:
+          "bg-transparent text-inherit shadow-none hover:bg-transparent hover:text-inherit",
       },
       size: {
         default: "h-9 px-4 py-2",

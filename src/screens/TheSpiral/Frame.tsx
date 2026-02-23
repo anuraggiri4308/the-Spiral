@@ -9,6 +9,7 @@ import { ExpertiseSection } from "./LandingPageSections/ExpertiseSection";
 import { Footer } from "./commonComponents/Footer";
 import Blogs from "./Pages/blogs/blogs";
 import BlogsDetailPage from "./Pages/blogs/blogsDetailPage";
+import DataLabeling from "./Pages/dataLabeling/dataLabeling";
 import { Route, Routes } from "react-router-dom";
 import { BookDemo } from "./Pages/bookDemo/BookDemo";
 
@@ -36,6 +37,8 @@ export const Frame = (): JSX.Element => {
           {/* Blog Pages */}
           <Route path="/blogs" element={<Blogs />} />
           <Route path="/blogs/:slug" element={<BlogsDetailPage />} />
+          <Route path="/dataLabeling" element={<DataLabeling />} />
+
           {/* (Optional) Direct detail page route */}
           <Route
             path="/bookDemo"

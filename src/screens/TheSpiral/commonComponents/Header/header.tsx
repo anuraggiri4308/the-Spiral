@@ -22,11 +22,10 @@ export const Header = ({
 
   const navItems = [
     { name: "Home", path: "/" },
-    { name: "Why Us?", path: "/#why-us" },
     { name: "Products", path: "/#how-it-works" },
-    { name: "Our Experties", path: "/#services" },
-    { name: "Data Labeling", path: "/#data-labeling" },
-    { name: "Our Team", path: "/#teams" },
+    //{ name: "Solutions", path: "/#services" },
+    { name: "Data Labeling", path: "/dataLabeling" },
+    { name: "Why Us?", path: "/#why-us" },
     { name: "Blog", path: "/blogs" },
   ];
 
@@ -101,13 +100,13 @@ export const Header = ({
         </button>
 
         {/* CTA Button (Desktop only) */}
-        <div className="hidden lg:flex items-start justify-end">
+        <div className="hidden lg:flex items-start justify-end gap-4">
           <Link to="/bookDemo">
             <Button
-              variant="secondary"
-              className="group w-[170px] flex items-center justify-center gap-2 px-4 py-5 rounded-full border border-white font-medium text-base tracking-[-0.54px] leading-6 hover:bg-white hover:opacity-90 transition-all duration-300"
+              variant="gradient"
+              className="group w-[170px] flex items-center justify-center gap-2 px-4 py-5 rounded-full  font-medium text-base tracking-[-0.54px] leading-6 hover:bg-white hover:opacity-90 transition-all duration-300"
             >
-              Contact Us
+              Book a Demo
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="w-5 h-5 ml-1 transition-transform group-hover:translate-x-1"
@@ -122,11 +121,37 @@ export const Header = ({
               </svg>
             </Button>
           </Link>
+
+          {/* Login Button */}
+          <a
+            href="https://datalabeler.netlify.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Button
+              variant="plain"
+              className="group flex items-center gap-2 px-4 py-5 text-white text-base font-medium hover:text-white"
+            >
+              Login
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="w-5 h-5 transition-transform group-hover:translate-x-1"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                  clipRule="evenodd"
+                />
+              </svg>
+            </Button>
+          </a>
         </div>
       </div>
 
       {/* ✅ Mobile Menu */}
-      {/* ✅ Mobile Menu (below header) */}
+
       {isMobileMenuOpen && (
         <div
           className="fixed top-24 left-0 right-0 bottom-0 z-40 lg:hidden flex flex-col
@@ -151,12 +176,38 @@ export const Header = ({
 
             <Link to="/bookDemo">
               <Button
-                variant="secondary"
+                variant="gradient"
                 className="mt-6 w-full flex items-center justify-center gap-1 px-4 py-4 rounded-[32px] [font-family:'Rethink_Sans',Helvetica] font-medium text-lg"
               >
-                Contact Us
+                Book a Demo
               </Button>
             </Link>
+
+            <a
+              href="https://datalabeler.netlify.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button
+                variant="plain"
+                className="mt-4 w-full flex items-center justify-center gap-2 text-white text-lg hover:text-white"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Login
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="w-5 h-5 transition-transform group-hover:translate-x-1"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+              </Button>
+            </a>
           </div>
         </div>
       )}
