@@ -116,7 +116,10 @@ export const DataLabeling = (): JSX.Element => {
           <div className="max-w-7xl mx-auto flex flex-col gap-12">
             <div className="text-center">
               <h2 className="text-4xl md:text-5xl font-bold mb-4">
-                Data Labeling <span className="text-blue-500">Types</span>
+                Data Labeling{" "}
+                <span className="bg-gradient-to-r from-[#35E0ED] to-[#0074E5] bg-clip-text text-transparent">
+                  Types
+                </span>
               </h2>
 
               <p className="text-gray-400 text-lg max-w-3xl mx-auto">
@@ -217,7 +220,9 @@ export const DataLabeling = (): JSX.Element => {
               </Badge>
               <h2 className="text-4xl md:text-5xl font-bold mb-4 mt-8">
                 Why Data Labeling is{" "}
-                <span className="text-blue-500">Important?</span>
+                <span className="bg-gradient-to-r from-[#35E0ED] to-[#0074E5] bg-clip-text text-transparent">
+                  Important
+                </span>
               </h2>
             </div>
 

@@ -25,7 +25,7 @@ export const Header = ({
     { name: "Products", path: "/#how-it-works" },
     //{ name: "Solutions", path: "/#services" },
     { name: "Data Labeling", path: "/dataLabeling" },
-    { name: "Why Us?", path: "/#why-us" },
+    { name: "Why Us?", path: "/whyUs" },
     { name: "Blog", path: "/blogs" },
   ];
 

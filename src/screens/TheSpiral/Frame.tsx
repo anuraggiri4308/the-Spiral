@@ -12,6 +12,7 @@ import BlogsDetailPage from "./Pages/blogs/blogsDetailPage";
 import DataLabeling from "./Pages/dataLabeling/dataLabeling";
 import { Route, Routes } from "react-router-dom";
 import { BookDemo } from "./Pages/bookDemo/BookDemo";
+import WhyUs from "./Pages/whyUs/whyUs";
 
 export const Frame = (): JSX.Element => {
   return (
@@ -38,6 +39,7 @@ export const Frame = (): JSX.Element => {
           <Route path="/blogs" element={<Blogs />} />
           <Route path="/blogs/:slug" element={<BlogsDetailPage />} />
           <Route path="/dataLabeling" element={<DataLabeling />} />
+          <Route path="/whyUs" element={<WhyUs />} />
 
           {/* (Optional) Direct detail page route */}
           <Route
