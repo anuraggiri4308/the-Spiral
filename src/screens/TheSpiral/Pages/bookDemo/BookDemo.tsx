@@ -4,6 +4,7 @@ import { Card, CardContent } from "../../../../components/ui/card";
 import { Input } from "../../../../components/ui/input";
 import { Label } from "../../../../components/ui/label";
 import { Textarea } from "../../../../components/ui/textarea";
+import emailjs from "@emailjs/browser";
 import {
   RadioGroup,
   RadioGroupItem,
@@ -123,19 +124,43 @@ export const BookDemo = (): JSX.Element => {
     return newErrors;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
     const newErrors = validateForm();
     setErrors(newErrors);
     setShowErrors(true);
 
     if (Object.keys(newErrors).length === 0) {
-      console.log("Form submitted successfully", {
-        formData,
-        selectedBudget,
-        selectedServices,
-      });
-      setOpen(true); // ✅ open success dialog
+      try {
+        // 🔥 High Intent Logic
+        const isHighIntent =
+          selectedBudget === "250k-1m" || selectedBudget === "1m-plus";
+
+        const subjectPrefix = isHighIntent ? "🔥 High Intent Lead | " : "";
+
+        await emailjs.send(
+          "service_843lhv9",
+          "template_t3j6y4d",
+          {
+            name: formData.name,
+            jobTitle: formData.jobTitle,
+            email: formData.email,
+            companyName: formData.companyName,
+            countryName: formData.countryName,
+            projectDescription: formData.projectDescription,
+            budget: selectedBudget,
+            services: selectedServices.join(", "),
+            other: otherText || "N/A",
+            subjectPrefix: subjectPrefix,
+          },
+          "VC1hXm3wv8LRX8xhn"
+        );
+
+        setOpen(true); // success dialog
+      } catch (error) {
+        console.error("EmailJS Error:", error);
+      }
     }
   };
 
