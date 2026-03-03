@@ -264,8 +264,8 @@ export const WhyUs = (): JSX.Element => {
                 className="bg-gradient-to-br from-gray-800/40 to-gray-900/40 border border-gray-700/50 rounded-2xl p-8 hover:border-cyan-400/50 transition-all duration-300 group"
               >
                 <div className="mb-6">
-                  <div className="w-14 h-14 bg-cyan-500/10 rounded-xl flex items-center justify-center group-hover:bg-cyan-500/20 transition-colors">
-                    <service.icon className="w-7 h-7 text-cyan-400" />
+                  <div className="w-14 h-14 bg-white/5 rounded-xl flex items-center justify-center transition-colors">
+                    <service.icon className="w-7 h-7 text-blue-500" />
                   </div>
                 </div>
 
@@ -322,8 +322,8 @@ export const WhyUs = (): JSX.Element => {
   transition-all duration-300"
               >
                 <div className="mb-6 flex justify-center">
-                  <div className="w-16 h-16 bg-gradient-to-br from-gray-800/60 to-gray-900/60 border border-gray-700/50 rounded-2xl flex items-center justify-center group-hover:border-cyan-400/50 transition-all duration-300">
-                    <benefit.icon className="w-8 h-8 text-cyan-400" />
+                  <div className="w-16 h-16 bg-white/5 rounded-2xl flex items-center justify-center transition-all duration-300">
+                    <benefit.icon className="w-8 h-8 text-blue-500" />
                   </div>
                 </div>
 
