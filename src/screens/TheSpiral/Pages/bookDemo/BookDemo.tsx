@@ -41,7 +41,7 @@ export const BookDemo = (): JSX.Element => {
   const [open, setOpen] = useState(false);
   const [privacyOpen, setPrivacyOpen] = useState(false);
   const [otherText, setOtherText] = useState("");
-
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const features = [
     "Cut labeling time without cutting accuracy",
     "Personalize workflows for your domain",
@@ -127,40 +127,64 @@ export const BookDemo = (): JSX.Element => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
+    if (isSubmitting) return; // prevent double click
+
     const newErrors = validateForm();
     setErrors(newErrors);
     setShowErrors(true);
 
-    if (Object.keys(newErrors).length === 0) {
-      try {
-        // 🔥 High Intent Logic
-        const isHighIntent =
-          selectedBudget === "250k-1m" || selectedBudget === "1m-plus";
+    if (Object.keys(newErrors).length !== 0) return;
 
-        const subjectPrefix = isHighIntent ? "🔥 High Intent Lead | " : "";
+    try {
+      setIsSubmitting(true);
 
-        await emailjs.send(
-          "service_843lhv9",
-          "template_t3j6y4d",
-          {
-            name: formData.name,
-            jobTitle: formData.jobTitle,
-            email: formData.email,
-            companyName: formData.companyName,
-            countryName: formData.countryName,
-            projectDescription: formData.projectDescription,
-            budget: selectedBudget,
-            services: selectedServices.join(", "),
-            other: otherText || "N/A",
-            subjectPrefix: subjectPrefix,
-          },
-          "VC1hXm3wv8LRX8xhn"
-        );
+      // 🔥 High Intent Logic
+      const isHighIntent =
+        selectedBudget === "250k-1m" || selectedBudget === "1m-plus";
 
-        setOpen(true); // success dialog
-      } catch (error) {
-        console.error("EmailJS Error:", error);
-      }
+      const subjectPrefix = isHighIntent ? "🔥 High Intent Lead | " : "";
+
+      await emailjs.send(
+        "service_843lhv9",
+        "template_t3j6y4d",
+        {
+          name: formData.name,
+          jobTitle: formData.jobTitle,
+          email: formData.email,
+          companyName: formData.companyName,
+          countryName: formData.countryName,
+          projectDescription: formData.projectDescription,
+          budget: selectedBudget,
+          services: selectedServices.join(", "),
+          other: otherText || "N/A",
+          subjectPrefix,
+        },
+        "VC1hXm3wv8LRX8xhn"
+      );
+
+      // ✅ Open success dialog
+      setOpen(true);
+
+      // ✅ Reset form fields
+      setFormData({
+        name: "",
+        jobTitle: "",
+        email: "",
+        companyName: "",
+        countryName: "",
+        projectDescription: "",
+      });
+
+      setSelectedBudget("");
+      setSelectedServices([]);
+      setOtherText("");
+      setErrors({});
+      setShowErrors(false);
+    } catch (error) {
+      console.error("EmailJS Error:", error);
+      alert("Something went wrong. Please try again.");
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
