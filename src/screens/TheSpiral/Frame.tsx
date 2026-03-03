@@ -27,7 +27,7 @@ export const Frame = (): JSX.Element => {
                 <HeroSection />
                 <WhyChooseUs />
                 <ExpertiseSection />
-                <FounderSection />
+                {/* <FounderSection /> */}
                 <HomePageBlogsSection />
                 <HomeCTASection />
                 <Footer />
