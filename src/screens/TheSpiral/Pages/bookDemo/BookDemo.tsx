@@ -261,9 +261,9 @@ export const BookDemo = (): JSX.Element => {
                 <img src={dbsLogo} alt="Carsome" className="h-6" />
                 <img src={dbsLogo} alt="Allbirds" className="h-6" />
                 <img src={dbsLogo} alt="Betabrand" className="h-6" />
-                <img src={dbsLogo} alt="SmartAsset" className="h-6" />
+                {/* <img src={dbsLogo} alt="SmartAsset" className="h-6" />
                 <img src={dbsLogo} alt="HelloFresh" className="h-6" />
-                <img src={dbsLogo} alt="DBS" className="h-6" />
+                <img src={dbsLogo} alt="DBS" className="h-6" /> */}
               </div>
             </div>
           </div>
